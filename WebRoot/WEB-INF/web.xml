@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+    <display-name>InternetSys</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <description></description>
+        <display-name>LoginServlet</display-name>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 用户管理Servlet -->
+    <servlet>
+        <description></description>
+        <display-name>UserProcessServlet</display-name>
+        <servlet-name>UserProcessServlet</servlet-name>
+        <servlet-class>controller.UserProcessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserProcessServlet</servlet-name>
+        <url-pattern>/UserProcessServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--  登陆-->
+    <servlet>
+        <description></description>
+        <display-name>LogProcessServlet</display-name>
+        <servlet-name>LogProcessServlet</servlet-name>
+        <servlet-class>controller.LogProcessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogProcessServlet</servlet-name>
+        <url-pattern>/LogProcessServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>TaskProcessServlet</display-name>
+        <servlet-name>TaskProcessServlet</servlet-name>
+        <servlet-class>controller.TaskProcessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskProcessServlet</servlet-name>
+        <url-pattern>/TaskProcessServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CompanyProcessServlet</display-name>
+        <servlet-name>CompanyProcessServlet</servlet-name>
+        <servlet-class>controller.CompanyProcessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CompanyProcessServlet</servlet-name>
+        <url-pattern>/CompanyProcessServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>TaskOneServlet</display-name>
+        <servlet-name>TaskOneServlet</servlet-name>
+        <servlet-class>controller.TaskOneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskOneServlet</servlet-name>
+        <url-pattern>/TaskOneServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>FeedbackServlet</display-name>
+        <servlet-name>FeedbackServlet</servlet-name>
+        <servlet-class>controller.FeedbackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FeedbackServlet</servlet-name>
+        <url-pattern>/FeedbackServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>TaskOneProServlet</display-name>
+        <servlet-name>TaskOneProServlet</servlet-name>
+        <servlet-class>controller.TaskOneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskOneProServlet</servlet-name>
+        <url-pattern>/TaskOneProServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeviceServlet</servlet-name>
+        <servlet-class>controller.DeviceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeviceServlet</servlet-name>
+        <url-pattern>/devices</url-pattern>
+    </servlet-mapping>
+
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <el-ignored>false</el-ignored>
+            <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
+
+
+    <!--  &lt;!&ndash; 漏洞管理Servlet &ndash;&gt;-->
+    <!--  <servlet>-->
+    <!--    <servlet-name>VulnerabilityServlet</servlet-name>-->
+    <!--    <servlet-class>com.example.security.VulnerabilityServlet</servlet-class>-->
+    <!--  </servlet>-->
+    <!--  <servlet-mapping>-->
+    <!--    <servlet-name>VulnerabilityServlet</servlet-name>-->
+    <!--    <url-pattern>/VulnerabilityServlet</url-pattern>-->
+    <!--  </servlet-mapping>-->
+
+    <!--  &lt;!&ndash; 英雄榜Servlet &ndash;&gt;-->
+    <!--  <servlet>-->
+    <!--    <servlet-name>HeroServlet</servlet-name>-->
+    <!--    <servlet-class>com.example.security.HeroServlet</servlet-class>-->
+    <!--  </servlet>-->
+    <!--  <servlet-mapping>-->
+    <!--    <servlet-name>HeroServlet</servlet-name>-->
+    <!--    <url-pattern>/HeroServlet</url-pattern>-->
+    <!--  </servlet-mapping>-->
+
+    <!--  &lt;!&ndash; 礼品管理Servlet &ndash;&gt;-->
+    <!--  <servlet>-->
+    <!--    <servlet-name>GiftServlet</servlet-name>-->
+    <!--    <servlet-class>com.example.security.GiftServlet</servlet-class>-->
+    <!--  </servlet>-->
+    <!--  <servlet-mapping>-->
+    <!--    <servlet-name>GiftServlet</servlet-name>-->
+    <!--    <url-pattern>/GiftServlet</url-pattern>-->
+    <!--  </servlet-mapping>-->
+
+    <!--  &lt;!&ndash; 安全情报Servlet &ndash;&gt;-->
+    <!--  <servlet>-->
+    <!--    <servlet-name>IntelligenceServlet</servlet-name>-->
+    <!--    <servlet-class>com.example.security.IntelligenceServlet</servlet-class>-->
+    <!--  </servlet>-->
+    <!--  <servlet-mapping>-->
+    <!--    <servlet-name>IntelligenceServlet</servlet-name>-->
+    <!--    <url-pattern>/IntelligenceServlet</url-pattern>-->
+    <!--  </servlet-mapping>-->
+
+    <!--  &lt;!&ndash; 博客管理Servlet &ndash;&gt;-->
+    <!--  <servlet>-->
+    <!--    <servlet-name>BlogServlet</servlet-name>-->
+    <!--    <servlet-class>com.example.security.BlogServlet</servlet-class>-->
+    <!--  </servlet>-->
+    <!--  <servlet-mapping>-->
+    <!--    <servlet-name>BlogServlet</servlet-name>-->
+    <!--    <url-pattern>/BlogServlet</url-pattern>-->
+    <!--  </servlet-mapping>-->
+
+</web-app>
