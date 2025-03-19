@@ -10,10 +10,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="first">
+    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="taskonepro.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/TaskOnePro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/TaskOnePro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/CompanyPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/CompanyPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/CompanyTypePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/CompanyTypePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/LogPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/LogPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/TaskOnePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/TaskOnePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/DatabaseConnect/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/DatabaseConnect/ConnectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/DeviceServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/DeviceServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/UserProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/UserProcessServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/CompanyType.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/CompanyType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Feedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Log.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/SecurityDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/SecurityDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/TaskOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/TaskOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/UserList.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/UserList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/AdminPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/AdminPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserProcessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserProcessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/CompanyPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/CompanyPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/CompanyTypePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/CompanyTypePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/LogPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/LogPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/TaskOnePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/TaskOnePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DatabaseConnect/ConnectDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DatabaseConnect/ConnectDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/DeviceServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/DeviceServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/UserProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/UserProcessServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/CompanyType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/CompanyType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Feedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Log.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/SecurityDevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/SecurityDevice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/TaskOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/TaskOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/UserList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/UserList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,6 +288,8 @@
       <workItem from="1742006917485" duration="833000" />
       <workItem from="1742007792043" duration="2629000" />
       <workItem from="1742011574391" duration="3814000" />
+      <workItem from="1742349318175" duration="1061000" />
+      <workItem from="1742350438149" duration="3767000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1742009123765</created>
@@ -268,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742010124604</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="taskonepro.md">
+      <created>1742349541087</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742349541087</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +331,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="taskonepro.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="taskonepro.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
