@@ -55,11 +55,12 @@ public class UserPro {
 	}
 
 	// 英雄分页查询
-	public ArrayList<User> getHerosByPage(int pageNow) {
+	public ArrayList<User> getHerosByPage(int pageNow){
 		// 创建一个ArrayList用于存储查询到的用户对象
 		ArrayList<User> al = new ArrayList<>();
 		// SQL查询语句，用于获取指定页码和每页数量的英雄信息
 		String sql = "SELECT user_name,phone,status,level FROM security_hero LIMIT?,?";
+
 		try {
 			// 通过ConnectDB类获取数据库连接
 			ct = new ConnectDB().getConn();

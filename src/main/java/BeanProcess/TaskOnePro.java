@@ -1,14 +1,9 @@
 package BeanProcess;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 import DatabaseConnect.ConnectDB;
 import model.TaskOne;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class TaskOnePro {
 
@@ -27,33 +22,56 @@ public class TaskOnePro {
         System.out.println(time1 + "  传入的开始时间  ");
         System.out.println(time2 + "  传入的结束时间  ");
 
-        //问题，查不到数据。。。。
+
         String sql = "SELECT * FROM taskone where DATE_FORMAT(assigndate,'%Y-%m-%d') between '" + time1 + "' AND '" + time2 + "' limit " + (pageNow - 1) * pageSize + "," + pageSize;
 
         try {
+            // 获取数据库连接
             ct = new ConnectDB().getConn();
+
+            // 创建预编译的 SQL 语句对象
             sta = ct.prepareStatement(sql);
+
+            // 执行查询并获取结果集
             rs = sta.executeQuery();
 
+            // 遍历结果集中的每一行数据
             while (rs.next()) {
-                while (rs.next()) {
-                    TaskOne task = new TaskOne();
-                    task.setTaskID(rs.getInt("taskid"));
-                    task.setTaskType(rs.getString("tasktype"));
-                    task.setAssignDate(rs.getDate("assigndate"));
-                    task.setStatus(rs.getInt("status"));
-                    task.setContent(rs.getString("content"));
-                    task.setCompanyID(rs.getInt("companyid"));
-                    task.setLevel(rs.getInt("level"));
-                    al.add(task);
+                // 创建一个新的 TaskOne 对象
+                TaskOne task = new TaskOne();
 
-                }
+                // 从结果集中获取 taskid 字段的值，并设置到 TaskOne 对象中
+                task.setTaskID(rs.getInt("taskid"));
+
+                // 从结果集中获取 tasktype 字段的值，并设置到 TaskOne 对象中
+                task.setTaskType(rs.getString("tasktype"));
+
+                // 从结果集中获取 assigndate 字段的值，并设置到 TaskOne 对象中
+                task.setAssignDate(rs.getDate("assigndate"));
+
+                // 从结果集中获取 status 字段的值，并设置到 TaskOne 对象中
+                task.setStatus(rs.getInt("status"));
+
+                // 从结果集中获取 content 字段的值，并设置到 TaskOne 对象中
+                task.setContent(rs.getString("content"));
+
+                // 从结果集中获取 companyid 字段的值，并设置到 TaskOne 对象中
+                task.setCompanyID(rs.getInt("companyid"));
+
+                // 从结果集中获取 level 字段的值，并设置到 TaskOne 对象中
+                task.setLevel(rs.getInt("level"));
+
+                // 将设置好属性的 TaskOne 对象添加到 ArrayList 中
+                al.add(task);
             }
         } catch (Exception e) {
+            // 如果发生异常，打印异常堆栈信息
             e.printStackTrace();
         } finally {
+            // 无论是否发生异常，都关闭相关数据库资源
             this.closeM();
         }
+        // 返回包含查询结果的 ArrayList
         return al;
     }
 
