@@ -135,7 +135,7 @@
         <div class="tsec-card">
             <div class="tsec-status"></div>
             <h3><i class="fas fa-shield-alt"></i>漏洞管理</h3>
-            <a href="<%=basePath%>h5/views/vulnerability.jsp" class="tsec-link">
+            <a href="<%=basePath%>userfiles/assignTask.jsp" class="tsec-link">
                 <i class="fas fa-bug"></i>漏洞报告
             </a>
             <a href="VulnerabilityServlet?action=list" class="tsec-link">
