@@ -228,7 +228,7 @@
                                                     class="right-font08">首页</a> |
                                                 <a href="TaskProcessServlet?flag=fenye&pageNow=<%=pageNow-1 %>"
                                                    class="right-font08">上一页</a> |
-                                                <a href="TaskProcessServlet?flag=fenye&pageNow=<%=pageNow-1 %>"
+                                                <a href="TaskProcessServlet?flag=fenye&pageNow=<%=pageNow+1 %>"
                                                    class="right-font08">下一页</a> |
                                                 <a href="TaskProcessServlet?flag=fenye&pageNow=<%=pageCount %>"
                                                    class="right-font08">末页</a>]

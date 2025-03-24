@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.Objects" %>
+
+
 <c:set var="currentPage"
        value='<%= Objects.toString(request.getParameter("currentPage"), "") %>'
        scope="page"/>
@@ -13,11 +15,15 @@
 <%! String currentPage = ""; %>
 
 <%
+    String name = (String) request.getSession().getAttribute("myName");
+    // 从会话中获取用户名称，用于显示在页面上
+%>
+
+<%
     currentPage = request.getParameter("currentPage") != null
             ? request.getParameter("currentPage")
             : "";
 %>
-
 
 <style>
     /* 修复fixed-top遮挡内容问题 */
@@ -25,7 +31,7 @@
         padding-top: 80px;
     }
 
-    /* 新增横向布局样式 */
+    /* 横向布局样式 */
     .horizontal-nav {
         display: flex;
         justify-content: space-between;
@@ -45,7 +51,7 @@
         position: relative;
     }
 
-    /* 调整原有悬浮动画位置 */
+    /* 悬浮动画位置 */
     .nav-link::after {
         bottom: -5px; /* 下移指示条位置 */
     }
@@ -85,7 +91,10 @@
         color: #ffd700;
         font-size: 0.9rem;
     }
-
+    /* 自定义样式 */
+    .nav-link.text-danger:hover {
+        color: #dc3545; /* 悬停时的颜色 */
+    }
 </style>
 
 <nav class="navbar fixed-top">
@@ -133,9 +142,18 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="${pageContext.request.contextPath}/login.jsp" class="nav-link">登陆</a>
+                <c:set var="userName" value="${sessionScope.myName}" />
+                <c:choose>
+                    <c:when test="${not empty userName}">
+                        <a href="${pageContext.request.contextPath}/index.jsp" class="nav-link">${userName}</a>
+                        <a href="${pageContext.request.contextPath}/logout.jsp" class="nav-link text-danger">退出</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="${pageContext.request.contextPath}/login.jsp" class="nav-link">登陆</a>
+                    </c:otherwise>
+                </c:choose>
             </li>
+
         </ul>
     </div>
 </nav>
-

@@ -132,10 +132,10 @@
                                         <span class="newfont06">至</span>
                                         <input name="assigndate2" type="text" size="12"/>
                                         <button name="submit" class="right-button02">查询</button>
-                                    </td>
-                                    <td width="144" align="left"><a href="#" onclick="sousuo()">
-                                        <input name="submit" type="button" class="right-button07" value="高级搜索"/>
-                                    </a></td>
+<%--                                    </td>--%>
+<%--                                    <td width="144" align="left"><a href="#" onclick="sousuo()">--%>
+<%--                                        <input name="submit" type="button" class="right-button07" value="高级搜索"/>--%>
+<%--                                    </a></td>--%>
                                 </tr>
                             </table>
                         </td>

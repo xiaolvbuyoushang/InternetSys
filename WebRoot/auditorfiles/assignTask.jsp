@@ -37,9 +37,8 @@
         .atten {
             font-size: 12px;
             font-weight: normal;
-            color: #F00;
+            color: #ff0000;
         }
-
         -->
     </style>
 </head>
@@ -126,7 +125,6 @@
                 </TD>
             </TR>
         </TABLE>
-
     </div>
 </form>
 </body>

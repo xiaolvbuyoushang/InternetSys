@@ -50,15 +50,16 @@ public class LoginServlet extends HttpServlet {
             } else { // 如果验证失败
                 error = "用户名或密码错误，或已被取消登录权限"; // 设置错误信息
                 request.setAttribute("info", error); // 将错误信息存储到请求对象中
-                request.getRequestDispatcher("index.jsp").forward(request, response); // 转发请求到登录页面
                 System.out.println(role + ": " + error); // 打印角色和错误信息
+                request.getRequestDispatcher("index.jsp").forward(request, response); // 转发请求到登录页面
+
             }
         } else if (role.equals("2")) { // 如果角色为2，表示普通用户
             UserPro userPro = new UserPro(); // 创建用户处理对象
             boolean b = userPro.checkUserInput(userCode, password); // 调用用户登录验证方法
             if (b) { // 如果验证成功
                 request.getSession().setAttribute("myName", userCode); // 将用户名存储到会话中
-                request.getRequestDispatcher("user/select.jsp").forward(request, response); // 转发请求到用户页面
+                request.getRequestDispatcher("index.jsp").forward(request, response); // 转发请求到用户页面
                 System.out.println(role + ": " + error); // 打印角色和错误信息
             } else { // 如果验证失败
                 error = "用户名或密码错误，或已被取消登录权限"; // 设置错误信息

@@ -40,6 +40,9 @@ public class TaskProcessServlet extends HttpServlet {
             String s_pageNow = request.getParameter("pageNow"); // 获取当前页码
             try {
                 int pageNow = Integer.parseInt(s_pageNow); // 将字符串类型的页码转换为整数
+                if (pageNow <= 0) {
+                    pageNow = 1; // 确保页码不小于1
+                }
                 TaskOnePro ubc = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = ubc.getTasksByPage(pageNow); // 获取当前页的任务列表
                 System.out.println("TaskOne: " + aList.size()); // 打印任务数量
@@ -72,13 +75,26 @@ public class TaskProcessServlet extends HttpServlet {
             int companyid = companyPro.getIDByName(companyname); // 获取公司ID
             TaskOnePro task = new TaskOnePro(); // 创建任务处理对象
             boolean b = task.addTask(tasktype, loginDate, status, content, companyid, level); // 调用添加任务方法
-            // 添加成功或失败都转发到同一个页面
-            request.getRequestDispatcher("user/select.jsp").forward(request, response);
+
+            // 根据添加任务的结果设置不同的请求属性
+            if (b) {
+                request.setAttribute("message", "任务添加成功！");
+                request.setAttribute("redirectUrl", "index.jsp");
+            } else {
+                request.setAttribute("message", "任务添加失败！");
+                request.setAttribute("redirectUrl", "index.jsp");
+            }
+//            request.getRequestDispatcher("user/select.jsp").forward(request, response);
+            // 转发请求到结果页面
+            request.getRequestDispatcher("result.jsp").forward(request, response);
         } else if (flag.equals("findrenwu")) { // 如果"flag"等于"findrenwu"，表示需要按状态查找任务
             int taskStatus = Integer.parseInt(request.getParameter("findrenwu")); // 获取任务状态
             String s_pageNow = request.getParameter("pageNow"); // 获取当前页码
             try {
                 int pageNow = Integer.parseInt(s_pageNow); // 将字符串类型的页码转换为整数
+                if (pageNow <= 0) {
+                    pageNow = 1; // 确保页码不小于1
+                }
                 System.out.println("findrenwu pageNow test: " + pageNow); // 打印当前页码
                 TaskOnePro taskOnePro = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = taskOnePro.getTaskByStatus(pageNow, taskStatus); // 获取指定状态的任务列表
@@ -102,6 +118,9 @@ public class TaskProcessServlet extends HttpServlet {
             String s_pageNow = request.getParameter("pageNow"); // 获取当前页码
             try {
                 int pageNow = Integer.parseInt(s_pageNow); // 将字符串类型的页码转换为整数
+                if (pageNow <= 0) {
+                    pageNow = 1; // 确保页码不小于1
+                }
                 System.out.println("findTask pageNow test: " + pageNow); // 打印当前页码
                 TaskOnePro taskonePro = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = taskonePro.getTaskPageByTime(pageNow, assigndate1, assigndate2); // 获取指定时间范围的任务列表
@@ -124,6 +143,9 @@ public class TaskProcessServlet extends HttpServlet {
             String s_pageNow = request.getParameter("pageNow"); // 获取当前页码
             try {
                 int pageNow = Integer.parseInt(s_pageNow); // 将字符串类型的页码转换为整数
+                if (pageNow <= 0) {
+                    pageNow = 1; // 确保页码不小于1
+                }
                 System.out.println("findTask pageNow test: " + pageNow); // 打印当前页码
                 TaskOnePro taskonePro = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = taskonePro.getTaskPageByTime(pageNow, assigndate1, assigndate2); // 获取指定时间范围的任务列表
