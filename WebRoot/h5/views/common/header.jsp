@@ -112,12 +112,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link <%= "vulnerability".equals(currentPage) ? "active" : "" %>"
-                   href="VulnerabilityServlet?action=list">
+                   href="TaskProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="tsec-link" onClick="tupian('24');">
                     <i class="bi bi-shield-exclamation me-2"></i>漏洞管理
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/hero.jsp">
+                <a class="nav-link" href="${pageContext.request.contextPath}/userfiles/score.jsp">
                     <i class="bi bi-trophy me-2"></i>贡献排行
                 </a>
             </li>

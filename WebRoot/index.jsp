@@ -149,11 +149,11 @@
         <div class="tsec-card">
             <h3><i class="fas fa-trophy"></i>贡献排行</h3>
 
-            <a href="UserProcessServlet?pageNow=1&flag=fenye" class="tsec-link">
+            <a href="./userfiles/score.jsp" class="tsec-link">
                 <i class="fas fa-medal"></i>英雄榜单
             </a>
-            <a href="UserProcessServlet?flag=fenye&type=hero&pageNow=1" class="tsec-link">
-                <i class="fas fa-chart-line"></i>本月排行
+            <a href="./userfiles/award.jsp" class="tsec-link">
+                <i class="fas fa-chart-line"></i>颁奖台
             </a>
         </div>
 

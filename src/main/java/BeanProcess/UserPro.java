@@ -348,6 +348,7 @@ public ArrayList<User> getUsersByPage(int pageNow) {
 				user.setOperation(rs.getString("operation"));
 				user.setLevel(rs.getInt("level"));
 				user.setUserPass(rs.getString("userpass"));
+				user.setUserPoints(rs.getInt("score"));
 				// 将User对象添加到ArrayList中
 				userList.add(user);
 			}
