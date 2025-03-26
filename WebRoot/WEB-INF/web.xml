@@ -34,7 +34,6 @@
         <servlet-name>UserProcessServlet</servlet-name>
         <url-pattern>/UserProcessServlet</url-pattern>
     </servlet-mapping>
-
     <!--  登陆-->
     <servlet>
         <description></description>

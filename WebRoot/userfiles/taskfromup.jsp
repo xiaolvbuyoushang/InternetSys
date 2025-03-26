@@ -176,7 +176,7 @@
                                             <td width="20%">漏洞内容</td>
                                             <td width="10%">单位ID</td>
                                             <td width="10%">漏洞等级</td>
-                                            <td width="12%">操作</td>
+<%--                                            <td width="12%">操作</td>--%>
                                         </tr>
                                         <%
                                             for (int i = 0; i < al.size(); i++) {

@@ -166,45 +166,62 @@ public class UserPro {
 	}
 
 	// 分页获取所有用户列表的方法
-	public ArrayList<User> getUsersByPage(int pageNow) {
-		// 创建一个ArrayList用于存储查询到的用户对象
-		ArrayList<User> al = new ArrayList<User>();
-		// SQL查询语句，用于获取指定页码和每页数量的用户信息
-		String sql = "select * from user limit " + (pageNow - 1) * pageSize + "," + pageSize;
-		try {
-			// 通过ConnectDB类获取数据库连接
-			ct = new ConnectDB().getConn();
-			// 创建预编译语句对象
-			sta = ct.prepareStatement(sql);
-			// 执行查询并获取结果集
-			rs = sta.executeQuery();
-			while (rs.next()) {
-				// 创建一个User对象
-				User user = new User();
-				// 设置User对象的各个属性值，从结果集中获取相应字段的值
-				user.setUserID(rs.getInt("userid"));
-				user.setUserName(rs.getString("username"));
-				user.setPhone(rs.getString("phone"));
-				user.setEmail(rs.getString("email"));
-				user.setWechat(rs.getString("wechat"));
-				user.setCompanyID(rs.getInt("companyid"));
-				user.setStatus(rs.getInt("status"));
-				user.setOperation(rs.getString("operation"));
-				user.setLevel(rs.getInt("level"));
-				user.setUserPass(rs.getString("userpass"));
-				// 将User对象添加到ArrayList中
-				al.add(user);
-			}
-		} catch (Exception e) {
-			// 如果发生异常，打印异常堆栈信息
-			e.printStackTrace();
-		} finally {
-			// 无论是否发生异常，都关闭相关数据库资源
-			this.closeM();
-		}
-		// 返回包含查询结果的ArrayList
-		return al;
-	}
+public ArrayList<User> getUsersByPage(int pageNow) {
+    // 创建一个ArrayList用于存储查询到的用户对象
+    ArrayList<User> al = new ArrayList<User>();
+    // SQL查询语句，用于获取指定页码和每页数量的用户信息
+    String sql = "select * from user limit " + (pageNow - 1) * pageSize + "," + pageSize;
+    try {
+        // 通过ConnectDB类获取数据库连接
+        ct = new ConnectDB().getConn();
+        // 创建预编译语句对象
+        sta = ct.prepareStatement(sql);
+        // 执行查询并获取结果集
+        rs = sta.executeQuery();
+        while (rs.next()) {
+            // 创建一个User对象
+            User user = new User();
+            // 设置User对象的各个属性值，从结果集中获取相应字段的值
+            user.setUserID(rs.getInt("userid"));
+            user.setUserName(rs.getString("username"));
+            user.setPhone(rs.getString("phone"));
+            user.setEmail(rs.getString("email"));
+            user.setWechat(rs.getString("wechat"));
+            user.setCompanyID(rs.getInt("companyid"));
+            user.setStatus(rs.getInt("status"));
+            user.setOperation(rs.getString("operation"));
+            user.setLevel(rs.getInt("level"));
+            user.setUserPass(rs.getString("userpass"));
+            user.setUserPoints(rs.getInt("score"));
+
+            // 打印用户信息
+            System.out.println("User ID: " + user.getUserID());
+            System.out.println("User Name: " + user.getUserName());
+            System.out.println("Phone: " + user.getPhone());
+            System.out.println("Email: " + user.getEmail());
+            System.out.println("Wechat: " + user.getWechat());
+            System.out.println("Company ID: " + user.getCompanyID());
+            System.out.println("Status: " + user.getStatus());
+            System.out.println("Operation: " + user.getOperation());
+            System.out.println("Level: " + user.getLevel());
+            System.out.println("User Pass: " + user.getUserPass());
+            System.out.println("User Points: " + user.getUserPoints());
+            System.out.println("----------------------------------------");
+
+            // 将User对象添加到ArrayList中
+            al.add(user);
+        }
+    } catch (Exception e) {
+        // 如果发生异常，打印异常堆栈信息
+        e.printStackTrace();
+    } finally {
+        // 无论是否发生异常，都关闭相关数据库资源
+        this.closeM();
+    }
+    // 返回包含查询结果的ArrayList
+    return al;
+}
+
 
 	// 根据用户名获取用户级别的方法
 	public int getLevelByName(String name) {

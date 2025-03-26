@@ -138,7 +138,9 @@
             <a href="<%=basePath%>userfiles/assignTask.jsp" class="tsec-link">
                 <i class="fas fa-bug"></i>漏洞报告
             </a>
-            <a href="VulnerabilityServlet?action=list" class="tsec-link">
+<%--            <a href="../TaskProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('24');">所有漏洞查看</a>--%>
+<%--            <a href="VulnerabilityServlet?action=list" class="tsec-link">--%>
+                <a href="TaskProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="tsec-link" onClick="tupian('24');">
                 <i class="fas fa-list-ul"></i>漏洞列表
             </a>
         </div>
@@ -147,7 +149,7 @@
         <div class="tsec-card">
             <h3><i class="fas fa-trophy"></i>贡献排行</h3>
 
-            <a href="<%=basePath%>h5/views/hero.jsp" class="tsec-link">
+            <a href="UserProcessServlet?pageNow=1&flag=fenye" class="tsec-link">
                 <i class="fas fa-medal"></i>英雄榜单
             </a>
             <a href="UserProcessServlet?flag=fenye&type=hero&pageNow=1" class="tsec-link">

@@ -224,24 +224,6 @@ public class User {
 //    ---------
 
     /**
-     * 获取用户所属组别
-     *
-     * @return 用户组别
-     */
-    public String getUserGroup() {
-        return userGroup;
-    }
-
-    /**
-     * 设置用户所属组别
-     *
-     * @param userGroup 新的用户组别
-     */
-    public void setUserGroup(String userGroup) {
-        this.userGroup = userGroup;
-    }
-
-    /**
      * 获取用户积分
      *
      * @return 用户积分值

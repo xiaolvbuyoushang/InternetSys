@@ -10,21 +10,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="Admin.class">
+    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="漏洞查询实现">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/InternetSys_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/InternetSys_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/TaskProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/TaskProcessServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/adminfiles/listrenwu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/adminfiles/listrenwu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/assignTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/assignTask.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfordown.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfordown.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfromup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfromup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/common/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/assignTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/assignTask.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TaskProcessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TaskProcessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InternetSys.iml" beforeDir="false" afterPath="$PROJECT_DIR$/InternetSys.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/adminfiles/userinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/adminfiles/userinfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/taskfromup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/taskfromup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/TaskProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/TaskProcessServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +105,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/h5/views/common" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot/userfiles" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -122,11 +124,11 @@
       <recent name="views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\biue\web_code\InternetSys\WebRoot\userfiles" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot\h5\views\common" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot\auditorfiles" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot\auditofiles" />
-      <recent name="D:\biue\web_code\InternetSys\WebRoot\auditor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\biue\web_code\InternetSys\WebRoot" />
@@ -139,7 +141,22 @@
       <recent name="views" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat 服务器.Tomcat 9.0.65">
+    <configuration name="UserProTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="InternetSys" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BeanProcess.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BeanProcess" />
+      <option name="MAIN_CLASS_NAME" value="BeanProcess.UserProTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -240,6 +257,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserProTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -275,6 +297,13 @@
       <workItem from="1742435659022" duration="10771000" />
       <workItem from="1742521558825" duration="693000" />
       <workItem from="1742522441341" duration="10985000" />
+      <workItem from="1742780836203" duration="267000" />
+      <workItem from="1742781156164" duration="725000" />
+      <workItem from="1742807775343" duration="4981000" />
+      <workItem from="1742866891430" duration="1772000" />
+      <workItem from="1742871121055" duration="1248000" />
+      <workItem from="1742962340145" duration="6618000" />
+      <workItem from="1742975938180" duration="443000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1742009123765</created>
@@ -318,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742435747191</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="漏洞查询实现">
+      <created>1742780956015</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742780956015</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,10 +372,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="first" />
     <MESSAGE value="taskonepro.md" />
     <MESSAGE value="Admin.class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin.class" />
+    <MESSAGE value="漏洞查询实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="漏洞查询实现" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

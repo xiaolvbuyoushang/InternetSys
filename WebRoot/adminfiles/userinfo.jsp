@@ -119,8 +119,11 @@
     // 将总页数字符串转换为整数
     int pageCount = Integer.parseInt(s_page);
     // 获取用户列表对象
+    // 获取用户列表对象
     @SuppressWarnings("unchecked")
     ArrayList<User> al = (ArrayList<User>) request.getAttribute("result");
+//    @SuppressWarnings("unchecked")
+//    ArrayList<User> al = (ArrayList<User>) request.getAttribute("result");
     // 创建TypeSelect对象用于数据查询
     TypeSelect select = new TypeSelect();
     // 初始化公司类型、公司名称和用户权限字符串
@@ -193,7 +196,6 @@
                                             <td width="4%" align="center" bgcolor="#EEEEEE">用户能否登录</td>
                                             <td width="4%" align="center" bgcolor="#EEEEEE">用户级别</td>
                                             <td width="11%" align="center" bgcolor="#EEEEEE">用户密码</td>
-                                            <td width="6%" align="center" bgcolor="#EEEEEE">用户组</td>
                                             <td width="6%" align="center" bgcolor="#EEEEEE">积分</td>
                                             <td width="6%" align="center" bgcolor="#EEEEEE">操作</td>
                                         </tr>
@@ -227,8 +229,6 @@
                                             <td height="20" bgcolor="#FFFFFF"><%=ub.getLevel()%>
                                             </td>
                                             <td height="20" bgcolor="#FFFFFF"><%=ub.getUserPass()%>
-                                            </td>
-                                            <td height="20" bgcolor="#FFFFFF"><%=ub.getUserGroup()%>
                                             </td>
                                             <td height="20" bgcolor="#FFFFFF"><%=ub.getUserPoints()%>
                                             </td>
