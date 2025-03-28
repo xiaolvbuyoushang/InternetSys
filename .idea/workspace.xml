@@ -10,64 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="漏洞查询实现">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/InternetSys_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/InternetSys_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InternetSys.iml" beforeDir="false" afterPath="$PROJECT_DIR$/InternetSys.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/AuditorPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/AuditorPro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/TaskProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/TaskProcessServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/UserProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/UserProcessServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/BlogServlet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/UpdateBlog.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/blog.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/blog.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/common/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/common/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/common/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/emergency.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/emergency.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/html/1.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/html/1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/html/腾讯云.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/intelligence.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/intelligence.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/干货.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/AuditorPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/AuditorPro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TaskProcessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TaskProcessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserProcessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserProcessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/AdminPro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/CompanyPro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/CompanyTypePro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/FeedbackPro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/LogPro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/TaskOnePro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/BeanProcess/UserPro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/DatabaseConnect/ConnectDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/DatabaseConnect/ConnectDB.class2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/CompanyProcessServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/FeedbackServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/LogProcessServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/TaskOneServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/TaskProcessServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/controller/UserProcessServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/CompanyType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/Feedback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/Log.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/TaskOne.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/model/UserList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/tools/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT/WEB-INF/classes/tools/TypeSelect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/AuditorPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/AuditorPro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/TaskProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/TaskProcessServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/UserProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/UserProcessServlet.class" afterDir="false" />
-    </list>
+    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="漏洞查询实现" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -346,6 +289,7 @@
       <workItem from="1742975938180" duration="9284000" />
       <workItem from="1742988186858" duration="12810000" />
       <workItem from="1743051659204" duration="12083000" />
+      <workItem from="1743126187860" duration="702000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1742009123765</created>
@@ -410,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742988038776</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="漏洞查询实现">
+      <created>1743126241240</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1743126241240</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
