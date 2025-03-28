@@ -122,25 +122,25 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/gift.jsp">
+                <a class="nav-link" href="${pageContext.request.contextPath}/userfiles/gift.jsp">
                     <i class="bi bi-gift me-2"></i>奖励中心
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/intelligence.jsp">
-                    <i class="bi bi-gift me-2"></i>威胁情报
-                </a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/intelligence.jsp">--%>
+<%--                    <i class="bi bi-gift me-2"></i>威胁情报--%>
+<%--                </a>--%>
+<%--            </li>--%>
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/blog.jsp">
                     <i class="bi bi-gift me-2"></i>技术博客
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/emergency.jsp">应急响应
-                    <i class="bi bi-gift me-2"></i>
-                </a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="${pageContext.request.contextPath}/h5/views/emergency.jsp">应急响应--%>
+<%--                    <i class="bi bi-gift me-2"></i>--%>
+<%--                </a>--%>
+<%--            </li>--%>
             <li class="nav-item">
                 <c:set var="userName" value="${sessionScope.myName}" />
                 <c:choose>

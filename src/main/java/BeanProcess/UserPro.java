@@ -53,36 +53,37 @@ public class UserPro {
 		// 返回计算出的总页数
 		return pageCount;
 	}
-
-	// 英雄分页查询
-	public ArrayList<User> getHerosByPage(int pageNow){
-		// 创建一个ArrayList用于存储查询到的用户对象
-		ArrayList<User> al = new ArrayList<>();
-		// SQL查询语句，用于获取指定页码和每页数量的英雄信息
-		String sql = "SELECT user_name,phone,status,level FROM security_hero LIMIT?,?";
+	// 验证用户积分并更新用户积分
+	public boolean validateAndDeductPoints(int userID, int requiredPoints) {
+		boolean b = false;
+		// SQL查询语句，用于获取用户当前积分
+		String selectSql = "SELECT score FROM user WHERE userid = ?";
+		// SQL更新语句，用于扣除用户积分
+		String updateSql = "UPDATE user SET score = score - ? WHERE userid = ? AND score >= ?";
 
 		try {
 			// 通过ConnectDB类获取数据库连接
 			ct = new ConnectDB().getConn();
 			// 创建预编译语句对象
-			PreparedStatement pstmt = ct.prepareStatement(sql);
-			// 设置第一个参数，即偏移量，用于指定从哪条记录开始查询
-			pstmt.setInt(1, (pageNow - 1) * pageSize);
-			// 设置第二个参数，即每页返回的记录数
-			pstmt.setInt(2, pageSize);
-
+			sta = ct.prepareStatement(selectSql);
+			// 设置参数
+			sta.setInt(1, userID);
 			// 执行查询并获取结果集
-			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
-				// 创建一个User对象
-				User u = new User();
-				// 设置User对象的属性值，从结果集中获取相应字段的值
-				u.setUserName(rs.getString("user_name"));
-				u.setPhone(rs.getString("phone"));
-				u.setStatus(rs.getInt("status"));
-				u.setLevel(rs.getInt("level"));
-				// 将User对象添加到ArrayList中
-				al.add(u);
+			rs = sta.executeQuery();
+			if (rs.next()) {
+				int currentPoints = rs.getInt("score"); // 修改为 "score"
+				if (currentPoints >= requiredPoints) {
+					// 用户有足够的积分，执行更新操作
+					sta = ct.prepareStatement(updateSql);
+					sta.setInt(1, requiredPoints);
+					sta.setInt(2, userID);
+					sta.setInt(3, requiredPoints);
+					int a = sta.executeUpdate();
+					if (a == 1) {
+						// 如果更新成功（影响行数为1），返回true
+						b = true;
+					}
+				}
 			}
 		} catch (Exception e) {
 			// 如果发生异常，打印异常堆栈信息
@@ -91,27 +92,27 @@ public class UserPro {
 			// 无论是否发生异常，都关闭相关数据库资源
 			this.closeM();
 		}
-		// 返回包含查询结果的ArrayList
-		return al;
+		// 返回验证和更新操作的结果
+		return b;
 	}
 
-	// 新增英雄总页数计算
-	public int getHeroPageCount() {
-		int count = 0;
-		// SQL查询语句，用于统计security_hero表中的记录总数
-		String sql = "SELECT COUNT(*) FROM security_hero";
+	// 获取用户积分的方法
+	public int getUserPoints(int userID) {
+		int userPoints = 0;
+		// SQL查询语句，用于获取用户当前积分
+		String sql = "SELECT score FROM user WHERE userid = ?";
 		try {
 			// 通过ConnectDB类获取数据库连接
 			ct = new ConnectDB().getConn();
-			// 创建普通Statement对象
-			Statement stmt = ct.createStatement();
+			// 创建预编译语句对象
+			sta = ct.prepareStatement(sql);
+			// 设置参数
+			sta.setInt(1, userID);
 			// 执行查询并获取结果集
-			ResultSet rs = stmt.executeQuery(sql);
+			rs = sta.executeQuery();
 			if (rs.next()) {
-				// 获取查询结果集中的第一列（即记录总数）
-				int total = rs.getInt(1);
-				// 计算总页数，使用ceil函数向上取整
-				count = (int) Math.ceil(total / (double) pageSize);
+				// 获取查询结果集中的用户积分
+				userPoints = rs.getInt("score"); // 修改为 "score"
 			}
 		} catch (Exception e) {
 			// 如果发生异常，打印异常堆栈信息
@@ -120,10 +121,66 @@ public class UserPro {
 			// 无论是否发生异常，都关闭相关数据库资源
 			this.closeM();
 		}
-		// 返回计算出的总页数
-		return count;
+		// 返回获取到的用户积分
+		return userPoints;
 	}
 
+	// 根据用户名获取用户ID的方法
+	public int getUserIDByUsername(String username) {
+		int userID = 0;
+		// SQL查询语句，用于根据用户名获取用户ID
+		String sql = "SELECT userid FROM user WHERE username = ?";
+		try {
+			// 通过ConnectDB类获取数据库连接
+			ct = new ConnectDB().getConn();
+			// 创建预编译语句对象
+			sta = ct.prepareStatement(sql);
+			// 设置参数
+			sta.setString(1, username);
+			// 执行查询并获取结果集
+			rs = sta.executeQuery();
+			if (rs.next()) {
+				// 获取查询结果集中的用户ID
+				userID = rs.getInt("userid");
+			}
+		} catch (Exception e) {
+			// 如果发生异常，打印异常堆栈信息
+			e.printStackTrace();
+		} finally {
+			// 无论是否发生异常，都关闭相关数据库资源
+			this.closeM();
+		}
+		// 返回获取到的用户ID
+		return userID;
+	}
+	// 根据用户名获取用户积分的方法
+	public int getUserPointsByUsername(String username) {
+		int userPoints = 0;
+		// SQL查询语句，用于根据用户名获取用户积分
+		String sql = "SELECT score FROM user WHERE username = ?";
+		try {
+			// 通过ConnectDB类获取数据库连接
+			ct = new ConnectDB().getConn();
+			// 创建预编译语句对象
+			sta = ct.prepareStatement(sql);
+			// 设置参数
+			sta.setString(1, username);
+			// 执行查询并获取结果集
+			rs = sta.executeQuery();
+			if (rs.next()) {
+				// 获取查询结果集中的用户积分
+				userPoints = rs.getInt("score");
+			}
+		} catch (Exception e) {
+			// 如果发生异常，打印异常堆栈信息
+			e.printStackTrace();
+		} finally {
+			// 无论是否发生异常，都关闭相关数据库资源
+			this.closeM();
+		}
+		// 返回获取到的用户积分
+		return userPoints;
+	}
 	// 根据公司ID分页获取用户列表的方法
 	public ArrayList<User> getUserPageByComID(int id, int pageNow) {
 		// 创建一个ArrayList用于存储查询到的用户对象

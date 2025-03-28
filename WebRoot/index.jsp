@@ -161,11 +161,11 @@
         <!-- 奖励中心 -->
         <div class="tsec-card">
             <h3><i class="fas fa-gift"></i>奖励中心</h3>
-            <a href="<%=basePath%>h5/views/gift.jsp" class="tsec-link">
+            <a href="<%=basePath%>userfiles/gift.jsp" class="tsec-link">
                 <i class="fas fa-exchange-alt"></i>礼品兑换
             </a>
-            <a href="GiftServlet?action=show" class="tsec-link">
-                <i class="fas fa-box-open"></i>可用奖品
+            <a href="./userfiles/myGifts.jsp" class="tsec-link">
+                <i class="fas fa-box-open"></i>我的奖品
             </a>
         </div>
 
@@ -186,8 +186,8 @@
             <a href="<%=basePath%>h5/views/blog.jsp" class="tsec-link">
                 <i class="fas fa-file-alt"></i>技术文章
             </a>
-            <a href="<%=basePath%>h5/views/BlogServlet.jsp" class="tsec-link">
-                <i class="fas fa-folder-open"></i>所有分类
+            <a href="<%=basePath%>h5/views/UpdateBlog.jsp" class="tsec-link">
+                <i class="fas fa-folder-open"></i>写文章
             </a>
         </div>
 

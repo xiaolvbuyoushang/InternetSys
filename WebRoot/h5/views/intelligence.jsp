@@ -140,7 +140,7 @@
 <footer class="bg-dark text-white mt-5">
     <div class="container py-4">
         <div class="text-center">
-            <p class="mb-0">&copy; 2023 网络安全态势感知平台. All rights reserved.</p>
+            <p class="mb-0">&copy; 2025 网络安全态势感知平台. All rights reserved.</p>
         </div>
     </div>
 </footer>

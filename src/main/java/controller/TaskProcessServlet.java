@@ -78,10 +78,10 @@ public class TaskProcessServlet extends HttpServlet {
 
             // 根据添加任务的结果设置不同的请求属性
             if (b) {
-                request.setAttribute("message", "任务添加成功！");
+                request.setAttribute("message", "漏洞上报成功！");
                 request.setAttribute("redirectUrl", "index.jsp");
             } else {
-                request.setAttribute("message", "任务添加失败！");
+                request.setAttribute("message", "漏洞上报失败！");
                 request.setAttribute("redirectUrl", "index.jsp");
             }
 //            request.getRequestDispatcher("user/select.jsp").forward(request, response);

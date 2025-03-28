@@ -1,11 +1,14 @@
 package BeanProcess;
 
 import DatabaseConnect.ConnectDB;
+import model.Auditor;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuditorPro {
 
@@ -46,6 +49,40 @@ public class AuditorPro {
         }
 
         return b; // 返回验证结果
+    }
+
+    /**
+     * 查询所有审计员详细信息方法
+     * 该方法用于查询所有审计员的ID、姓名和手机号。
+     * 如果查询成功，则返回一个包含这些信息的Auditor对象列表；否则返回空列表。
+     */
+    public List<Auditor> getAllAuditors() {
+        List<Auditor> auditors = new ArrayList<>(); // 定义一个列表，用于存储查询结果
+
+        // 构造SQL查询语句，查询所有审计员信息
+        String sql = "select auditorID, auditorName, phone from auditor";
+
+        try {
+            ConnectDB cdb = new ConnectDB(); // 创建数据库连接工具对象
+            ct = cdb.getConn(); // 获取数据库连接
+            sta = ct.prepareStatement(sql); // 使用预处理SQL语句对象执行查询
+            rs = sta.executeQuery(); // 执行查询并获取结果集
+
+            // 遍历查询结果集
+            while (rs.next()) {
+                Auditor auditor = new Auditor(); // 创建一个新的Auditor对象
+                auditor.setAuditorID(rs.getInt("auditorID")); // 设置审计员ID
+                auditor.setAuditorName(rs.getString("auditorName")); // 设置审计员姓名
+                auditor.setPhone(rs.getString("phone")); // 设置审计员电话
+                auditors.add(auditor); // 将Auditor对象添加到列表中
+            }
+        } catch (Exception ex) { // 捕获异常并打印堆栈信息
+            ex.printStackTrace();
+        } finally { // 无论是否发生异常，都关闭数据库资源
+            this.closeM(); // 调用关闭资源方法
+        }
+
+        return auditors; // 返回查询结果列表
     }
 
     /**

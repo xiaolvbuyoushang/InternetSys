@@ -44,14 +44,14 @@ public class UserProcessServlet extends HttpServlet {
                 UserPro ubc = new UserPro(); // 创建用户处理对象
 
                 if ("hero".equals(type)) { // 如果查询类型是"hero"，表示需要查询英雄分页数据
-                    ArrayList<User> aList = ubc.getHerosByPage(pageNow); // 获取当前页的英雄列表
-                    int pageCount = ubc.getHeroPageCount(); // 获取总页数
-                    // 将查询结果和分页信息存储到请求对象中
-                    request.setAttribute("result", aList);
-                    request.setAttribute("pageCount", pageCount + "");
-                    request.setAttribute("pageNow", pageNow + "");
-                    // 转发请求到显示英雄数据的页面
-                    request.getRequestDispatcher("h5/views/hero.jsp").forward(request, response);
+//                    ArrayList<User> aList = ubc.getHerosByPage(pageNow); // 获取当前页的英雄列表
+//                    int pageCount = ubc.getHeroPageCount(); // 获取总页数
+//                    // 将查询结果和分页信息存储到请求对象中
+//                    request.setAttribute("result", aList);
+//                    request.setAttribute("pageCount", pageCount + "");
+//                    request.setAttribute("pageNow", pageNow + "");
+//                    // 转发请求到显示英雄数据的页面
+//                    request.getRequestDispatcher("h5/views/hero.jsp").forward(request, response);
                 } else { // 否则查询普通用户分页数据
                     ArrayList<User> aList = ubc.getUsersByPage(pageNow); // 获取当前页的用户列表
                     int pageCount = ubc.getPageCount(); // 获取总页数
