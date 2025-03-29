@@ -172,7 +172,7 @@
                                             <td width="10%">漏洞ID</td>
                                             <td width="10%">漏洞类型</td>
                                             <td width="10%">发布时间</td>
-                                            <td width="10%">漏洞状态</td>
+                                            <td width="10%">漏洞审核状态</td>
                                             <td width="20%">漏洞内容</td>
                                             <td width="10%">单位ID</td>
                                             <td width="10%">漏洞等级</td>

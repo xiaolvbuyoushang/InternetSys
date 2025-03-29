@@ -113,6 +113,14 @@
         <url-pattern>/devices</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DisposeServlet</servlet-name>
+        <servlet-class>controller.DisposeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisposeServlet</servlet-name>
+        <url-pattern>/DisposeServlet</url-pattern>
+    </servlet-mapping>
 
     <jsp-config>
         <jsp-property-group>

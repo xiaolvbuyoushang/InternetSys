@@ -62,44 +62,83 @@
 
     <link href="css/css.css" rel="stylesheet" type="text/css"/>
     <script type="text/JavaScript">
+        // 打开高级搜索页面
+        function sousuo() {
+            window.open("gaojisousuo.htm", "", "depended=0,alwaysRaised=1,width=800,height=510,location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0");
+        }
 
+        // 全选复选框
+        function selectAll() {
+            var obj = document.fom.elements;
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].name == "delid") {
+                    obj[i].checked = true;
+                }
+            }
+        }
+
+        // 反选复选框
+        function unselectAll() {
+            var obj = document.fom.elements;
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i].name == "delid") {
+                    if (obj[i].checked == true) obj[i].checked = false;
+                    else obj[i].checked = true;
+                }
+            }
+        }
+
+        // 跳转到添加漏洞页面
+        function link() {
+            document.getElementById("fom").action = "addrenwu.htm";
+            document.getElementById("fom").submit();
+        }
+
+        // 提交状态更改
+        function updateStatus(taskId, status) {
+            // 创建一个隐藏的表单来提交状态更改
+            var form = document.createElement("form");
+            form.method = "post";
+            form.action = "TaskProcessServlet?flag=updateStatus&taskId=" + taskId + "&status=" + status;
+
+            // 将表单添加到文档中并提交
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        // 提交表单并显示保存成功的提示
+        function handleSubmit(taskId, status) {
+            // 创建一个隐藏的表单来提交状态更改
+            var form = document.createElement("form");
+            form.method = "post";
+            form.action = "TaskProcessServlet?flag=updateStatus&taskId=" + taskId + "&status=" + status;
+
+            // 添加隐藏字段来存储任务ID和状态
+            var taskIdInput = document.createElement("input");
+            taskIdInput.type = "hidden";
+            taskIdInput.name = "taskId";
+            taskIdInput.value = taskId;
+            form.appendChild(taskIdInput);
+
+            var statusInput = document.createElement("input");
+            statusInput.type = "hidden";
+            statusInput.name = "status";
+            statusInput.value = status;
+            form.appendChild(statusInput);
+
+            // 将表单添加到文档中并提交
+            document.body.appendChild(form);
+            form.submit();
+
+            // 显示保存成功的提示
+            alert('保存成功！');
+
+            // 返回false以防止表单的默认提交行为
+            return false;
+        }
     </script>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<SCRIPT language=JavaScript>
-    // 打开高级搜索页面
-    function sousuo() {
-        window.open("gaojisousuo.htm", "", "depended=0,alwaysRaised=1,width=800,height=510,location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0");
-    }
-
-    // 全选复选框
-    function selectAll() {
-        var obj = document.fom.elements;
-        for (var i = 0; i < obj.length; i++) {
-            if (obj[i].name == "delid") {
-                obj[i].checked = true;
-            }
-        }
-    }
-
-    // 反选复选框
-    function unselectAll() {
-        var obj = document.fom.elements;
-        for (var i = 0; i < obj.length; i++) {
-            if (obj[i].name == "delid") {
-                if (obj[i].checked == true) obj[i].checked = false;
-                else obj[i].checked = true;
-            }
-        }
-    }
-
-    // 跳转到添加漏洞页面
-    function link() {
-        document.getElementById("fom").action = "addrenwu.htm";
-        document.getElementById("fom").submit();
-    }
-
-</SCRIPT>
 
 <body>
 <%
@@ -135,14 +174,10 @@
                             <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td width="24"><img src="images/ico07.gif" width="20" height="18"/></td>
-                                    <td width="519">查看内容：按漏洞状态：
+                                    <td width="519">查看内容：按漏洞审核状态：
                                         <input name="findrenwu" type="text" size="12"/>
                                         <button type="submit" class="right-button02" onclick="">查询</button>
-<%--                                    <td width="679" align="left">--%>
-<%--                                        <a href="#" onclick="">--%>
-<%--                                            <input name="Submit" type="button" class="right-button07" value="高级搜索"/>--%>
-<%--                                        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--%>
-<%--                                    </td>--%>
+                                    </td>
                                 </tr>
                             </table>
                         </td>
@@ -172,14 +207,15 @@
                                 <td height="40" class="font42">
                                     <table width="100%" border="0" cellpadding="4" cellspacing="1" bgcolor="#464646" class="newfont03">
                                         <tr class="CTitle">
-                                            <td height="22" colspan="9" align="center" style="font-size:16px">漏洞列表</td>
+                                            <td height="22" colspan="10" align="center" style="font-size:16px">漏洞列表</td>
                                         </tr>
                                         <tr bgcolor="#EEEEEE">
                                             <td width="4%" align="center" height="30">选择</td>
                                             <td width="10%">漏洞ID</td>
                                             <td width="10%">漏洞类型</td>
                                             <td width="10%">发布时间</td>
-                                            <td width="10%">漏洞状态</td>
+                                            <td width="10%">漏洞审核状态</td>
+<%--                                            <td width="15%">审核意见</td> <!-- 添加审核意见列 -->--%>
                                             <td width="20%">漏洞内容</td>
                                             <td width="10%">单位ID</td>
                                             <td width="10%">漏洞等级</td>
@@ -196,11 +232,26 @@
                                             <td><%= ub.getTaskID()%></td>
                                             <td><%= ub.getTaskType()%></td>
                                             <td><%= ub.getAssignDate()%></td>
-                                            <td><%= taskStatus%></td>
+                                            <td>
+                                                <!-- 下拉菜单用于选择新的审核状态 -->
+                                                <select id="status_<%= ub.getTaskID() %>" onchange="handleSubmit(<%= ub.getTaskID() %>, this.value)">
+                                                    <option value="0" <%= ub.getStatus() == 0 ? "selected" : "" %>>待审核</option>
+                                                    <option value="1" <%= ub.getStatus() == 1 ? "selected" : "" %>>已审核</option>
+                                                    <option value="2" <%= ub.getStatus() == 2 ? "selected" : "" %>>审核通过</option>
+                                                    <option value="3" <%= ub.getStatus() == 3 ? "selected" : "" %>>审核不通过</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <!-- 显示审核意见 -->
+                                                <%= ub.getAuditComment() %>
+                                            </td>
                                             <td><%= ub.getContent()%></td>
                                             <td><%= ub.getCompanyID()%></td>
                                             <td><%= ub.getLevel() %></td>
-                                            <td><a href="#">删除</a></td>
+                                            <td>
+                                                <!-- 提交按钮，点击时触发handleSubmit函数 -->
+                                                <button type="button" class="button" onclick="handleSubmit(<%= ub.getTaskID() %>, document.getElementById('status_<%= ub.getTaskID() %>').value)">保存</button>
+                                            </td>
                                         </tr>
                                         <%
                                             }

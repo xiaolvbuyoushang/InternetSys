@@ -11,6 +11,7 @@ public class TaskOne {
     private String content;
     private int companyID;
     private int level;
+    private String auditComment; // 添加审核意见属性
 
     public int getTaskID() {
         return taskID;
@@ -68,6 +69,14 @@ public class TaskOne {
         this.companyID = companyID;
     }
 
+
+    public String getAuditComment() { // 添加 getter 方法
+        return auditComment;
+    }
+
+    public void setAuditComment(String auditComment) { // 添加 setter 方法
+        this.auditComment = auditComment;
+    }
     @Override
     public String toString() {
         return "TaskOne [taskID=" + taskID + ", taskType=" + taskType + ", assignDate=" + assignDate + ", status="

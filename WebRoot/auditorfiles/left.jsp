@@ -159,6 +159,31 @@
                     </td>
                 </tr>
             </table>
+
+            <!-- 新增处置漏洞菜单项 -->
+            <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
+                <tr>
+                    <td height="29">
+                        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="8%"><img name="img9" id="img9" src="../images/ico04.gif" width="8" height="11"/></td>
+                                <td width="92%">
+                                    <a href="javascript:" target="mainFrame" class="left-font03" onClick="list('9');">处置漏洞</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </TABLE>
+            <table id="subtree9" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
+                <tr>
+                    <td width="9%" height="20"><img id="xiaotu25" src="../images/ico06.gif" width="8" height="12"/></td>
+                    <td width="91%">
+                        <a href="../DisposeServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('25');">处置漏洞查看</a>
+<%--                        ../TaskProcessServlet?pageNow=1&flag=chuzhilvduan&chuzhilvduan=0--%>
+                    </td>
+                </tr>
+            </table>
             <!-- 漏洞系统结束 -->
         </TD>
     </tr>

@@ -129,7 +129,7 @@
 
                                 <tr>
                                     <td width="24"><img src="images/ico07.gif" width="20" height="18"/></td>
-                                    <td width="519">查看内容：按漏洞状态：
+                                    <td width="519">查看内容：按漏洞审核状态：
 
                                         <input name="findrenwu" type="text" size="12"/>
                                         <button type="submit" class="right-button02" onclick="">查询</button>
@@ -166,23 +166,25 @@
                                     <table width="100%" border="0" cellpadding="4" cellspacing="1" bgcolor="#464646"
                                            class="newfont03">
                                         <tr class="CTitle">
-                                            <td height="22" colspan="9" align="center" style="font-size:16px">漏洞列表</td>
+                                            <td height="22" colspan="10" align="center" style="font-size:16px">漏洞列表</td>
                                         </tr>
                                         <tr bgcolor="#EEEEEE">
                                             <td width="4%" align="center" height="30">选择</td>
                                             <td width="10%">漏洞ID</td>
                                             <td width="10%">漏洞类型</td>
                                             <td width="10%">发布时间</td>
-                                            <td width="10%">漏洞状态</td>
+                                            <td width="10%">漏洞审核状态</td>
                                             <td width="20%">漏洞内容</td>
                                             <td width="10%">单位ID</td>
-                                            <td width="10%">漏洞等级</td>
-                                            <td width="12%">操作</td>
+                                            <td width="5%">漏洞等级</td>
+                                            <td width="8%">操作</td>
+                                            <td width="15%">审核意见</td> <!-- 添加审核意见列 -->
                                         </tr>
                                         <%
                                             for (int i = 0; i < al.size(); i++) {
                                                 TaskOne ub = (TaskOne) al.get(i);
                                                 taskStatus = select.statusChange(ub.getStatus());
+                                                String auditComment = ub.getAuditComment(); // 假设 TaskOne 类中有 getAuditComment 方法
                                         %>
                                         <tr bgcolor="#FFFFFF">
                                             <td height="20"><input type="checkbox" name="delid"/></td>
@@ -201,6 +203,7 @@
                                             <td><%= ub.getLevel() %>
                                             </td>
                                             <td><a href="#">删除</a></td>
+                                            <td><%= auditComment %> <!-- 显示审核意见 --></td> <!-- 添加审核意见列 -->
                                         </tr>
                                         <%
                                             }

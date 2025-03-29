@@ -24,9 +24,9 @@ public class TypeSelect {
     public String statusChange(int taskstatus) {
         String status = "";
         if (taskstatus == 0) {
-            status = "未处理";
+            status = "未审核";
         } else {
-            status = "已处理";
+            status = "已审核";
         }
         return status;
     }

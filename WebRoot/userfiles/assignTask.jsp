@@ -96,17 +96,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td nowrap align="right">事件状态：</td>
-                                                <td>
-                                                    <select name="taskstatus">
-                                                        <option selected="selected">0</option>
-                                                        <option>0</option>
-                                                        <option>1</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td nowrap align="right" width="13%">承办单位：</td>
+                                                <td nowrap align="right" width="13%">资产归属单位：</td>
                                                 <td width="41%">
                                                     <input name="company" class="text" style="width:250px" type="text" size="40"/>
                                                     <span class="red"> *</span>
@@ -122,8 +112,8 @@
                                                 <td align="right">事件等级:</td>
                                                 <td>
                                                     <select name="level">
-                                                        <option selected="selected">==请选择==</option>
-                                                        <option>1</option>
+                                                        <option>==请选择==</option>
+                                                        <option selected="selected">1</option>
                                                         <option>2</option>
                                                         <option>3</option>
                                                         <option>4</option>
@@ -148,6 +138,8 @@
                 </TR>
             </TABLE>
         </div>
+        <!-- 添加隐藏的输入字段来存储默认值 -->
+        <input type="hidden" name="taskstatus" value="0"/>
     </form>
 </body>
 </html>
