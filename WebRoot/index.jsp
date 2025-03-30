@@ -140,7 +140,7 @@
             </a>
 <%--            <a href="../TaskProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('24');">所有漏洞查看</a>--%>
 <%--            <a href="VulnerabilityServlet?action=list" class="tsec-link">--%>
-                <a href="TaskProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="tsec-link" onClick="tupian('24');">
+                <a href="TaskProcessUserServlet?pageNow=1&flag=fenye" target="mainFrame" class="tsec-link" onClick="tupian('24');">
                 <i class="fas fa-list-ul"></i>漏洞列表
             </a>
         </div>

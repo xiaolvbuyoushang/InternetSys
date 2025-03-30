@@ -3,6 +3,13 @@
     // 获取上下文路径和基本路径
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+
+    // 从session中获取用户名
+    String name = (String) request.getSession().getAttribute("myName");
+    if (name == null) {
+        name = ""; // 如果session中没有用户名，设置为空字符串
+    }
+
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -35,14 +42,47 @@
 
         // 处理表单提交逻辑
         function handleSubmit() {
+            // 获取事件等级
+            var level = document.getElementById("level").value;
+
+            // 检查用户名是否为空
+            var username = document.getElementById("username").value;
+            if (!username) {
+                alert("用户名不能为空！");
+                return false;
+            }
+
             // 提交表单
             document.getElementById("fom").submit();
 
             // 显示保存成功的提示
             alert('保存成功！');
 
-            // 重定向到首页
-            window.location.href = "${pageContext.request.contextPath}/index.jsp";
+            // 增加积分
+            var scoreToAdd = 0;
+            switch (level) {
+                case "1":
+                    scoreToAdd = 10;
+                    break;
+                case "2":
+                    scoreToAdd = 50;
+                    break;
+                case "3":
+                    scoreToAdd = 100;
+                    break;
+                case "4":
+                    scoreToAdd = 200;
+                    break;
+                default:
+                    scoreToAdd = 0;
+                    break;
+            }
+
+            // 调用AddScoreServlet增加积分
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "../AddScoreServlet", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("username=" + encodeURIComponent(username) + "&level=" + encodeURIComponent(level));
 
             // 返回false以防止表单的默认提交行为
             return false;
@@ -111,12 +151,12 @@
                                             <tr>
                                                 <td align="right">事件等级:</td>
                                                 <td>
-                                                    <select name="level">
+                                                    <select id="level" name="level">
                                                         <option>==请选择==</option>
-                                                        <option selected="selected">1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -140,6 +180,8 @@
         </div>
         <!-- 添加隐藏的输入字段来存储默认值 -->
         <input type="hidden" name="taskstatus" value="0"/>
+        <!-- 添加隐藏的输入字段来存储用户名 -->
+        <input type="hidden" id="username" name="username" value="<%= name %>"/>
     </form>
 </body>
 </html>

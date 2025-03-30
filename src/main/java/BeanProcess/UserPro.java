@@ -22,6 +22,7 @@ public class UserPro {
 	// 总页数
 	private int pageCount;
 
+
 	// 获取总页数的方法
 	public int getPageCount() {
 		// SQL查询语句，用于统计user表中的记录总数
@@ -278,7 +279,34 @@ public ArrayList<User> getUsersByPage(int pageNow) {
     // 返回包含查询结果的ArrayList
     return al;
 }
-
+	// 增加用户积分的方法
+	public boolean addScore(String username, int scoreToAdd) {
+		boolean b = false;
+		// SQL更新语句，用于增加用户积分
+		String sql = "UPDATE user SET score = score + ? WHERE username = ?";
+		try {
+			// 通过ConnectDB类获取数据库连接
+			ct = new ConnectDB().getConn();
+			// 创建预编译语句对象
+			sta = ct.prepareStatement(sql);
+			// 设置参数
+			sta.setInt(1, scoreToAdd);
+			sta.setString(2, username);
+			// 执行更新操作并获取影响的行数
+			int rowsAffected = sta.executeUpdate();
+			if (rowsAffected > 0) {
+				b = true;
+			}
+		} catch (Exception e) {
+			// 如果发生异常，打印异常堆栈信息
+			e.printStackTrace();
+		} finally {
+			// 无论是否发生异常，都关闭相关数据库资源
+			this.closeM();
+		}
+		// 返回更新操作的结果
+		return b;
+	}
 
 	// 根据用户名获取用户级别的方法
 	public int getLevelByName(String name) {

@@ -105,6 +105,25 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>TaskProcessUserServlet</servlet-name>
+        <servlet-class>controller.TaskProcessUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskProcessUserServlet</servlet-name>
+        <url-pattern>/TaskProcessUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddScoreServlet</servlet-name>
+        <servlet-class>controller.AddScoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddScoreServlet</servlet-name>
+        <url-pattern>/AddScoreServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>DeviceServlet</servlet-name>
         <servlet-class>controller.DeviceServlet</servlet-class>
     </servlet>

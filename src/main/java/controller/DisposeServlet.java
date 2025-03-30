@@ -55,7 +55,7 @@ public class DisposeServlet extends HttpServlet {
             } catch (Exception e) { // 捕获异常并打印堆栈信息
                 e.printStackTrace();
             }
-        } else if (flag.equals("addDispose")) { // 如果"flag"等于"addDispose"，表示需要添加处置记录
+        } else if (flag.equals("updateDispose")) { // 如果"flag"等于"updateDispose"，表示需要更新处置记录
             // 获取处置相关信息
             String taskid = request.getParameter("taskid");
             String disposeStatus = request.getParameter("disposeStatus");
@@ -69,15 +69,15 @@ public class DisposeServlet extends HttpServlet {
             // 获取当前时间戳
             Timestamp loginDate = new Timestamp(new Date().getTime());
             DisposePro disposePro = new DisposePro(); // 创建处置处理对象
-            boolean b = disposePro.addDispose(taskid, loginDate, disposeStatus, auditorID, basis); // 调用添加处置方法
+            boolean b = disposePro.updateDispose(taskid, new Date(loginDate.getTime()), disposeStatus, auditorID, basis); // 调用更新处置方法
 
-            // 根据添加处置的结果设置不同的请求属性
+            // 根据更新处置的结果设置不同的请求属性
             if (b) {
-                request.setAttribute("message", "处置记录添加成功！");
-                request.setAttribute("redirectUrl", "index.jsp");
+                request.setAttribute("message", "处置记录更新成功！");
+                request.setAttribute("redirectUrl", "auditorfiles/updateDispose.jsp");
             } else {
-                request.setAttribute("message", "处置记录添加失败！");
-                request.setAttribute("redirectUrl", "index.jsp");
+                request.setAttribute("message", "处置记录更新失败！");
+                request.setAttribute("redirectUrl", "auditorfiles/updateDispose.jsp");
             }
             // 转发请求到结果页面
             request.getRequestDispatcher("result.jsp").forward(request, response);
@@ -105,6 +105,9 @@ public class DisposeServlet extends HttpServlet {
             }
         }
     }
+
+
+
 
     /**
      * 处理POST请求的方法

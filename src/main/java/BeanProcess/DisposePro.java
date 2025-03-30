@@ -36,24 +36,24 @@ public class DisposePro {
      * @param basis        处置依据
      * @return 是否添加成功
      */
-    public boolean addDispose(String taskid, Date disposeTime, String disposeStatus, String auditorID, String basis) {
+    public boolean updateDispose(String taskid, Date disposeTime, String disposeStatus, String auditorID, String basis) {
         if (connection == null) {
-            System.err.println("Database connection is null in addDispose method.");
+            System.err.println("Database connection is null in updateDispose method.");
             return false;
         }
-        String sql = "INSERT INTO taskone (taskid, dispose_time, dispose_status, auditorID, basis) VALUES (?, ?, ?, ?, ?)";
+        String sql = "UPDATE taskone SET dispose_time = ?, dispose_status = ?, auditorID = ?, basis = ? WHERE taskid = ?";
         PreparedStatement ps = null;
         try {
             ps = connection.prepareStatement(sql);
             if (ps == null) {
-                System.err.println("PreparedStatement is null in addDispose method.");
+                System.err.println("PreparedStatement is null in updateDispose method.");
                 return false;
             }
-            ps.setString(1, taskid);
-            ps.setTimestamp(2, new java.sql.Timestamp(disposeTime.getTime()));
-            ps.setString(3, disposeStatus);
-            ps.setString(4, auditorID);
-            ps.setString(5, basis);
+            ps.setTimestamp(1, new java.sql.Timestamp(disposeTime.getTime()));
+            ps.setString(2, disposeStatus);
+            ps.setString(3, auditorID);
+            ps.setString(4, basis);
+            ps.setString(5, taskid);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -62,6 +62,12 @@ public class DisposePro {
             closeResources(ps, null, null);
         }
     }
+
+
+
+
+
+
 
     /**
      * 分页查询处置记录

@@ -8,7 +8,8 @@ public class ConnectDB {
 
     public Connection getConn() {
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/internetsys";
+        String url = "jdbc:mysql://localhost:3306/internetsys?useUnicode=true&characterEncoding=UTF-8";
+
         String user = "root";
         String password = "root";
         try {
