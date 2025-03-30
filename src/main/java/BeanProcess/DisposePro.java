@@ -41,7 +41,7 @@ public class DisposePro {
             System.err.println("Database connection is null in addDispose method.");
             return false;
         }
-        String sql = "INSERT INTO vulnerability_disposal (taskid, dispose_time, dispose_status, auditorID, basis) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO taskone (taskid, dispose_time, dispose_status, auditorID, basis) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         try {
             ps = connection.prepareStatement(sql);
@@ -76,7 +76,7 @@ public class DisposePro {
         }
         int pageSize = 10; // 每页显示的记录数
         int offset = (pageNow - 1) * pageSize;
-        String sql = "SELECT * FROM vulnerability_disposal ORDER BY id LIMIT ? OFFSET ?";
+        String sql = "SELECT taskid, tasktype, assigndate, status, auditcomment, content, companyid, level, dispose_status, auditorID, dispose_time, basis FROM taskone ORDER BY taskid LIMIT ? OFFSET ?";
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -91,11 +91,17 @@ public class DisposePro {
             List<Dispose> disposes = new ArrayList<>();
             while (rs.next()) {
                 Dispose dispose = new Dispose();
-                dispose.setId(rs.getInt("id"));
                 dispose.setTaskid(rs.getString("taskid"));
-                dispose.setDisposeTime(rs.getTimestamp("dispose_time"));
+                dispose.setTaskType(rs.getString("tasktype"));
+                dispose.setAssignDate(rs.getTimestamp("assigndate"));
+                dispose.setStatus(rs.getInt("status"));
+                dispose.setAuditComment(rs.getString("auditcomment"));
+                dispose.setVulnerabilityContent(rs.getString("content"));
+                dispose.setCompanyID(rs.getInt("companyid"));
+                dispose.setLevel(rs.getInt("level"));
                 dispose.setDisposeStatus(rs.getString("dispose_status"));
                 dispose.setAuditorID(rs.getString("auditorID"));
+                dispose.setDisposeTime(rs.getTimestamp("dispose_time"));
                 dispose.setBasis(rs.getString("basis"));
                 disposes.add(dispose);
             }
@@ -155,7 +161,7 @@ public class DisposePro {
         }
         int pageSize = 10; // 每页显示的记录数
         int offset = (pageNow - 1) * pageSize;
-        String sql = "SELECT * FROM taskone WHERE taskid = ? ORDER BY id LIMIT ? OFFSET ?";
+        String sql = "SELECT taskid, tasktype, assigndate, status, auditcomment, content, companyid, level, dispose_status, auditorID, dispose_time, basis FROM taskone WHERE taskid = ? ORDER BY taskid LIMIT ? OFFSET ?";
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -171,11 +177,17 @@ public class DisposePro {
             List<Dispose> disposes = new ArrayList<>();
             while (rs.next()) {
                 Dispose dispose = new Dispose();
-                dispose.setId(rs.getInt("id"));
                 dispose.setTaskid(rs.getString("taskid"));
-                dispose.setDisposeTime(rs.getTimestamp("dispose_time"));
+                dispose.setTaskType(rs.getString("tasktype"));
+                dispose.setAssignDate(rs.getTimestamp("assigndate"));
+                dispose.setStatus(rs.getInt("status"));
+                dispose.setAuditComment(rs.getString("auditcomment"));
+                dispose.setVulnerabilityContent(rs.getString("content"));
+                dispose.setCompanyID(rs.getInt("companyid"));
+                dispose.setLevel(rs.getInt("level"));
                 dispose.setDisposeStatus(rs.getString("dispose_status"));
                 dispose.setAuditorID(rs.getString("auditorID"));
+                dispose.setDisposeTime(rs.getTimestamp("dispose_time"));
                 dispose.setBasis(rs.getString("basis"));
                 disposes.add(dispose);
             }

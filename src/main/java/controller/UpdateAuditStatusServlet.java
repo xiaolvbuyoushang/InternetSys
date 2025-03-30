@@ -33,9 +33,9 @@ public class UpdateAuditStatusServlet extends HttpServlet {
         boolean updateSuccess = taskOnePro.updateAuditStatus(taskId, auditStatus, auditOpinion);
 
         if (updateSuccess) {
-            response.sendRedirect("success.jsp"); // 重定向到成功页面
+            response.sendRedirect("assignTask.jsp"); // 重定向到成功页面
         } else {
-            response.sendRedirect("failure.jsp"); // 重定向到失败页面
+            response.sendRedirect("assignTask.jsp"); // 重定向到失败页面
         }
     }
 

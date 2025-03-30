@@ -65,6 +65,16 @@
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <SCRIPT language=JavaScript>
+
+
+    function openAssignTask(taskId) {
+        // 构建 URL 并传递漏洞 ID 参数
+        var url = "assignTask.jsp?taskId=" + taskId;
+        // 使用 window.location.href 进行页面跳转
+        window.location.href = url;
+    }
+
+
     function sousuo() {
         window.open("gaojisousuo.htm", "", "depended=0,alwaysRaised=1,width=800,height=510,location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0");
     }
@@ -188,26 +198,22 @@
                                         %>
                                         <tr bgcolor="#FFFFFF">
                                             <td height="20"><input type="checkbox" name="delid"/></td>
-                                            <td><%= ub.getTaskID()%>
+                                            <td><%= ub.getTaskID()%></td>
+                                            <td><%= ub.getTaskType()%></td>
+                                            <td><%= ub.getAssignDate()%></td>
+                                            <td><%= taskStatus%></td>
+                                            <td><%= ub.getContent()%></td>
+                                            <td><%= ub.getCompanyID()%></td>
+                                            <td><%= ub.getLevel() %></td>
+                                            <td>
+                                                <a href="#" onclick="openAssignTask(<%= ub.getTaskID() %>);">审核</a> <!-- 添加审核按钮 -->
                                             </td>
-                                            <td><%= ub.getTaskType()%>
-                                            </td>
-                                            <td><%= ub.getAssignDate()%>
-                                            </td>
-                                            <td><%= taskStatus%>
-                                            </td>
-                                            <td><%= ub.getContent()%>
-                                            </td>
-                                            <td><%= ub.getCompanyID()%>
-                                            </td>
-                                            <td><%= ub.getLevel() %>
-                                            </td>
-                                            <td><a href="#">删除</a></td>
-                                            <td><%= auditComment %> <!-- 显示审核意见 --></td> <!-- 添加审核意见列 -->
+                                            <td><%= auditComment %></td> <!-- 显示审核意见 -->
                                         </tr>
                                         <%
                                             }
                                         %>
+
                                     </table>
                                 </td>
                             </tr>

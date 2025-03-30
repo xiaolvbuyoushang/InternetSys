@@ -23,10 +23,19 @@ public class TypeSelect {
 
     public String statusChange(int taskstatus) {
         String status = "";
-        if (taskstatus == 0) {
-            status = "未审核";
-        } else {
-            status = "已审核";
+        switch (taskstatus) {
+            case 0:
+                status = "未审核";
+                break;
+            case 1:
+                status = "通过";
+                break;
+            case 2:
+                status = "拒绝";
+                break;
+            default:
+                status = "未知状态";
+                break;
         }
         return status;
     }

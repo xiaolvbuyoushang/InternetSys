@@ -7,7 +7,6 @@
 <%
     String path = request.getContextPath(); // 获取当前应用的上下文路径，例如 "/InternetSys"
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-    // 拼接完整的基础路径，例如 "http://localhost:8080/InternetSys/"
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -133,6 +132,54 @@
                     <!-- 点击后调用tupian函数，切换图标状态 -->
                 </tr>
             </table>
+            <!-- 新增更新审核菜单项 -->
+            <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
+                <tr>
+                    <td height="29">
+                        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="8%"><img name="img10" id="img10" src="../images/ico04.gif" width="8" height="11"/></td>
+                                <td width="92%">
+                                    <a href="javascript:" target="mainFrame" class="left-font03" onClick="list('10');">更新审核</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </TABLE>
+            <table id="subtree10" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
+                <tr>
+                    <td width="9%" height="21"><img id="xiaotu26" src="../images/ico06.gif" width="8" height="12"/></td>
+                    <td width="91%">
+                        <a href="../assignTask.jsp" target="mainFrame" class="left-font03" onClick="tupian('26');">审核漏洞</a>
+                    </td>
+                    <!-- 点击后调用tupian函数，切换图标状态 -->
+                </tr>
+            </table>
+<%--            <!-- 新增审核通过漏洞菜单项 -->--%>
+<%--            <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">--%>
+<%--                <tr>--%>
+<%--                    <td height="29">--%>
+<%--                        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">--%>
+<%--                            <tr>--%>
+<%--                                <td width="8%"><img name="img11" id="img11" src="../images/ico04.gif" width="8" height="11"/></td>--%>
+<%--                                <td width="92%">--%>
+<%--                                    <a href="javascript:" target="mainFrame" class="left-font03" onClick="list('11');">审核通过漏洞</a>--%>
+<%--                                </td>--%>
+<%--                            </tr>--%>
+<%--                        </table>--%>
+<%--                    </td>--%>
+<%--                </tr>--%>
+<%--            </TABLE>--%>
+<%--            <table id="subtree11" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">--%>
+<%--                <tr>--%>
+<%--                    <td width="9%" height="21"><img id="xiaotu28" src="../images/ico06.gif" width="8" height="12"/></td>--%>
+<%--                    <td width="91%">--%>
+<%--                        <a href="../ApprovedVulnerabilitiesServlet" target="mainFrame" class="left-font03" onClick="tupian('28');">查看审核通过漏洞</a>--%>
+<%--                    </td>--%>
+<%--                    <!-- 点击后调用tupian函数，切换图标状态 -->--%>
+<%--                </tr>--%>
+<%--            </table>--%>
 
 
             <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
@@ -179,11 +226,20 @@
                 <tr>
                     <td width="9%" height="20"><img id="xiaotu25" src="../images/ico06.gif" width="8" height="12"/></td>
                     <td width="91%">
-                        <a href="../DisposeServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('25');">处置漏洞查看</a>
-<%--                        ../TaskProcessServlet?pageNow=1&flag=chuzhilvduan&chuzhilvduan=0--%>
+                        <a href="../DisposeServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('25');">漏洞处置查看</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="9%" height="20"><img id="xiaotu27" src="../images/ico06.gif" width="8" height="12"/></td>
+                    <td width="91%">
+                        <a href="../auditorfiles/addDispose.jsp" target="mainFrame" class="left-font03" onClick="tupian('27');">处置漏洞</a>
                     </td>
                 </tr>
             </table>
+
+
+
+
             <!-- 漏洞系统结束 -->
         </TD>
     </tr>

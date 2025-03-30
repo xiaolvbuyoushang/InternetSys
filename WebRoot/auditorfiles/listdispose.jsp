@@ -6,6 +6,7 @@
     String path = request.getContextPath();
     // 构建完整的URL路径
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    int pageNow = 0;
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -99,6 +100,12 @@
         document.getElementById("fom").submit();
     }
 
+    // 删除单条记录
+    function deleteRecord(taskid) {
+        if (confirm("确定要删除该记录吗？")) {
+            window.location.href = "DisposeServlet?pageNow=<%=pageNow%>&flag=deleteDispose&taskId=" + taskid;
+        }
+    }
 </SCRIPT>
 
 <body>
@@ -116,7 +123,7 @@
     // 获取从Servlet传递过来的处置记录列表、当前页码、总页数等信息
     @SuppressWarnings("unchecked")
     List<Dispose> al = (List<Dispose>) request.getAttribute("result");
-    int pageNow = Integer.parseInt((String) request.getAttribute("pageNow"));
+    pageNow = Integer.parseInt((String) request.getAttribute("pageNow"));
     String s_page = (String) request.getAttribute("pageCount");
     int pageCount = Integer.parseInt(s_page);
     TypeSelect select = new TypeSelect();
@@ -166,17 +173,21 @@
                                 <td height="40" class="font42">
                                     <table width="100%" border="0" cellpadding="4" cellspacing="1" bgcolor="#464646" class="newfont03">
                                         <tr class="CTitle">
-                                            <td height="22" colspan="9" align="center" style="font-size:16px">漏洞处置记录</td>
+                                            <td height="22" colspan="12" align="center" style="font-size:16px">漏洞处置记录</td>
                                         </tr>
                                         <tr bgcolor="#EEEEEE">
                                             <td width="4%" align="center" height="30">选择</td>
-                                            <td width="10%">记录ID</td>
-                                            <td width="10%">任务ID</td>
-                                            <td width="15%">处置时间</td>
-                                            <td width="15%">处置状态</td>
-                                            <td width="20%">处置依据</td>
-                                            <td width="10%">处置人员ID</td>
-                                            <td width="12%">操作</td>
+                                            <td width="4%">任务ID</td>
+                                            <td width="4%">漏洞类型</td>
+                                            <td width="8%">发布时间</td>
+                                            <td width="5%">漏洞审核状态</td>
+                                            <td width="10%">漏洞内容</td>
+                                            <td width="4%">漏洞等级</td>
+                                            <td width="8%">处置时间</td>
+                                            <td width="5%">处置状态</td>
+                                            <td width="4%">处置人员ID</td>
+                                            <td width="10%">处置依据</td>
+                                            <td width="8%">操作</td>
                                         </tr>
                                         <%
                                             // 遍历处置记录列表并显示每个记录的信息
@@ -184,14 +195,20 @@
                                                 Dispose dispose = (Dispose) al.get(i);
                                         %>
                                         <tr bgcolor="#FFFFFF">
-                                            <td height="20"><input type="checkbox" name="delid"/></td>
-                                            <td><%= dispose.getId()%></td>
-                                            <td><%= dispose.getTaskid()%></td>
-                                            <td><%= dispose.getDisposeTime()%></td>
-                                            <td><%= dispose.getDisposeStatus()%></td>
-                                            <td><%= dispose.getBasis()%></td>
-                                            <td><%= dispose.getAuditorID()%></td>
-                                            <td><a href="#">删除</a></td>
+                                            <td height="20"><input type="checkbox" name="delid" value="<%= dispose.getTaskid() %>"/></td>
+                                            <td><%= dispose.getTaskid() %></td>
+                                            <td><%= dispose.getTaskType() %></td>
+                                            <td><%= dispose.getAssignDate() %></td>
+                                            <td><%= dispose.getStatus() %></td>
+                                            <td><%= dispose.getVulnerabilityContent() %></td>
+                                            <td><%= dispose.getLevel() %></td>
+                                            <td><%= dispose.getDisposeTime() %></td>
+                                            <td><%= dispose.getDisposeStatus() %></td>
+                                            <td><%= dispose.getAuditorID() %></td>
+                                            <td><%= dispose.getBasis() %></td>
+                                            <td>
+                                                <a href="javascript:deleteRecord('<%= dispose.getTaskid() %>')">删除</a>
+                                            </td>
                                         </tr>
                                         <%
                                             }
@@ -210,15 +227,15 @@
                                     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="right-font08">
                                         <tr>
                                             <td width="50%">
-                                                共 <span class="right-text09"><%=pageCount %></span> 页 | 第
-                                                <span class="right-text09"><%=pageNow %></span> 页
+                                                共 <span class="right-text09"><%= pageCount %></span> 页 | 第
+                                                <span class="right-text09"><%= pageNow %></span> 页
                                             </td>
                                             <td width="49%" align="right">
                                                 [
-                                                <a href="DisposeServlet?flag=fenye&pageNow=<%=1 %>" class="right-font08">首页</a> |
-                                                <a href="DisposeServlet?flag=fenye&pageNow=<%=pageNow-1 %>" class="right-font08">上一页</a> |
-                                                <a href="DisposeServlet?flag=fenye&pageNow=<%=pageNow+1 %>" class="right-font08">下一页</a> |
-                                                <a href="DisposeServlet?flag=fenye&pageNow=<%=pageCount %>" class="right-font08">末页</a>
+                                                <a href="DisposeServlet?flag=fenye&pageNow=<%= 1 %>" class="right-font08">首页</a> |
+                                                <a href="DisposeServlet?flag=fenye&pageNow=<%= pageNow - 1 %>" class="right-font08">上一页</a> |
+                                                <a href="DisposeServlet?flag=fenye&pageNow=<%= pageNow + 1 %>" class="right-font08">下一页</a> |
+                                                <a href="DisposeServlet?flag=fenye&pageNow=<%= pageCount %>" class="right-font08">末页</a>
                                                 ]
                                                 转至：
                                             </td>

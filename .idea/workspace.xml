@@ -10,28 +10,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="漏洞查询实现">
-      <change afterPath="$PROJECT_DIR$/WebRoot/assignTask.jsp" afterDir="false" />
+    <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="漏洞审核功能实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/TaskOnePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/TaskOnePro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/TaskOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/TaskOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/DisposePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/DisposePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/UpdateAuditStatusServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/UpdateAuditStatusServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Dispose.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/model/Dispose.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/tools/TypeSelect.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/tools/TypeSelect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/adminfiles/listrenwu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/adminfiles/listrenwu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/assignTask.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/assignTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/assignTask.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/listrenwu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/listrenwu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfordown.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfordown.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfromup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/taskfromup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/assignTask.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/assignTask.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/taskfordown.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/taskfordown.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/taskfromup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/taskfromup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/TaskOnePro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/TaskOnePro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/TaskOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TaskOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/listdispose.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/listdispose.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/DisposePro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/DisposePro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UpdateAuditStatusServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UpdateAuditStatusServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Dispose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Dispose.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/TypeSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/TypeSelect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/TaskOnePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/TaskOnePro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/TaskOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/TaskOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/DisposePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/DisposePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/UpdateAuditStatusServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/UpdateAuditStatusServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Dispose.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Dispose.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tools/TypeSelect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tools/TypeSelect.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -315,6 +311,8 @@
       <workItem from="1743051659204" duration="12083000" />
       <workItem from="1743126187860" duration="11230000" />
       <workItem from="1743171191754" duration="7700000" />
+      <workItem from="1743213805546" duration="9285000" />
+      <workItem from="1743318265149" duration="7862000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1742009123765</created>
@@ -393,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1743127757019</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="漏洞审核功能实现">
+      <created>1743213856585</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1743213856585</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +422,8 @@
     <MESSAGE value="taskonepro.md" />
     <MESSAGE value="Admin.class" />
     <MESSAGE value="漏洞查询实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="漏洞查询实现" />
+    <MESSAGE value="漏洞审核功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="漏洞审核功能实现" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

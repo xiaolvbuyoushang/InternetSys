@@ -2,6 +2,7 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    String taskId = request.getParameter("taskId");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -30,11 +31,13 @@
 </head>
 
 <body class="ContentBody">
+
+
 <form name="fom" id="fom" method="post" onsubmit="link(); return false;">
     <div class="MainDiv">
         <table width="99%" border="0" cellpadding="0" cellspacing="0" class="CContent">
             <tr>
-                <th class="tablestyle_title">任务审核页面</th>
+                <th class="tablestyle_title">漏洞审核页面</th>
             </tr>
             <tr>
                 <td class="CPanel">
@@ -45,11 +48,11 @@
                         <TR>
                             <TD width="100%">
                                 <fieldset style="height:100%;">
-                                    <legend>审核任务</legend>
+                                    <legend>审核漏洞</legend>
                                     <table border="0" cellpadding="2" cellspacing="1" style="width:100%">
                                         <tr>
-                                            <td nowrap align="right" width="13%">任务ID：</td>
-                                            <td><input name="taskId" class="text" style="width:250px" type="text" size="40" value="${task.taskID}"/></td>
+                                            <td nowrap align="right" width="13%">漏洞ID：</td>
+                                            <td><input name="taskId" class="text" style="width:250px" type="text" size="40" value="<%=taskId %>"/></td>
                                         </tr>
                                         <tr>
                                             <td nowrap align="right">审核状态：</td>
@@ -81,5 +84,6 @@
         </TABLE>
     </div>
 </form>
+
 </body>
 </html>
