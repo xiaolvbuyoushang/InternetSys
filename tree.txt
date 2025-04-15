@@ -1,0 +1,136 @@
+D:\BIUE\WEB_CODE\INTERNETSYS
+├─.idea
+│  ├─artifacts
+│  ├─dataSources
+│  │  └─2492510f-54cd-4f4d-97fa-8811a1cacd2a
+│  │      └─storage_v2
+│  │          └─_src_
+│  │              └─schema
+│  ├─libraries
+│  └─shelf
+│      ├─在变基之前未提交的更改_[变更]
+│      └─在变基之前未提交的更改_[变更]1
+├─.settings
+├─lib
+├─src
+│  ├─main
+│  │  ├─java
+│  │  │  ├─BeanProcess
+│  │  │  ├─controller
+│  │  │  ├─DatabaseConnect
+│  │  │  ├─model
+│  │  │  └─tools
+│  │  └─resources
+│  └─test
+│      └─java
+├─target
+│  ├─classes
+│  │  ├─BeanProcess
+│  │  ├─controller
+│  │  ├─DatabaseConnect
+│  │  ├─model
+│  │  └─tools
+│  └─generated-sources
+│      └─annotations
+└─WebRoot
+    ├─admin
+    ├─adminfiles
+    ├─assets
+    │  ├─css
+    │  └─img
+    ├─auditor
+    ├─auditorfiles
+    ├─css
+    ├─h5
+    │  └─views
+    │      ├─common
+    │      └─html
+    │          └─html
+    ├─html
+    ├─images
+    ├─js
+    ├─kindeditor
+    │  ├─docs
+    │  │  ├─_static
+    │  │  └─_templates
+    │  │      └─classy
+    │  │          └─static
+    │  ├─lang
+    │  ├─lib
+    │  │  ├─firebug-lite
+    │  │  │  ├─build
+    │  │  │  │  ├─chrome-extension
+    │  │  │  │  │  └─skin
+    │  │  │  │  │      └─xp
+    │  │  │  │  └─chrome-extension-beta
+    │  │  │  │      └─skin
+    │  │  │  │          └─xp
+    │  │  │  ├─plugin
+    │  │  │  │  └─proxy
+    │  │  │  └─skin
+    │  │  │      ├─classic
+    │  │  │      ├─light
+    │  │  │      └─xp
+    │  │  └─qunit
+    │  ├─plugins
+    │  │  ├─anchor
+    │  │  ├─autoheight
+    │  │  ├─baidumap
+    │  │  ├─clearhtml
+    │  │  ├─code
+    │  │  ├─emoticons
+    │  │  ├─filemanager
+    │  │  │  └─images
+    │  │  ├─fixtoolbar
+    │  │  ├─flash
+    │  │  ├─image
+    │  │  │  └─images
+    │  │  ├─insertfile
+    │  │  ├─lineheight
+    │  │  ├─link
+    │  │  ├─map
+    │  │  ├─media
+    │  │  ├─multiimage
+    │  │  │  └─images
+    │  │  ├─pagebreak
+    │  │  ├─plainpaste
+    │  │  ├─preview
+    │  │  ├─quickformat
+    │  │  ├─table
+    │  │  ├─template
+    │  │  │  └─html
+    │  │  └─wordpaste
+    │  ├─src
+    │  ├─test
+    │  │  ├─data
+    │  │  └─webdriver
+    │  │      └─php-webdriver
+    │  └─themes
+    │      ├─common
+    │      ├─default
+    │      ├─qq
+    │      └─simple
+    ├─mainframe
+    ├─META-INF
+    ├─user
+    ├─user2
+    │  └─images
+    ├─userfiles
+    └─WEB-INF
+        ├─classes
+        │  ├─BeanProcess
+        │  ├─controller
+        │  ├─DatabaseConnect
+        │  ├─main
+        │  │  ├─java
+        │  │  │  ├─BeanProcess
+        │  │  │  ├─controller
+        │  │  │  ├─DatabaseConnect
+        │  │  │  ├─model
+        │  │  │  └─tools
+        │  │  └─resources
+        │  ├─model
+        │  ├─test
+        │  │  └─java
+        │  └─tools
+        └─lib
