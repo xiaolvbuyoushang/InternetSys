@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="model.Dispose" %>
+<%@ page import="tools.AuditorSelect" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
@@ -76,9 +77,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body>
 <%
-    String u = (String) session.getAttribute("myName");
-    if (u == null) {
-        response.sendRedirect("admin/login.jsp?err=1");
+
+    // 从 session 中获取当前用户的 ID
+    Integer userID = (Integer) session.getAttribute("auditorID");
+    if (userID == null) {
+        response.sendRedirect("login.jsp?err=1");
         return;
     }
 %>
@@ -89,17 +92,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     int pageNow = Integer.parseInt((String) request.getAttribute("pageNow"));
     String s_page = (String) request.getAttribute("pageCount");
     int pageCount = Integer.parseInt(s_page);
+
+    boolean hasPendingAudit = false;
+    boolean hasPendingDispose = false;
+
+    if (result != null) {
+        for (Dispose dispose : result) {
+            String auditComment = dispose.getAuditComment();
+            String basis = dispose.getBasis();
+            Integer auditorID = Integer.parseInt(dispose.getAuditorID());
+
+            // 输出调试信息
+            System.out.println("Current User ID: " + userID);
+            System.out.println("Dispose Auditor ID: " + auditorID);
+            System.out.println("Audit Comment: " + auditComment);
+            System.out.println("Basis: " + basis);
+
+            if (userID.equals(auditorID)) {
+                if (auditComment == null || auditComment.trim().isEmpty()) {
+                    hasPendingAudit = true;
+                    System.out.println("Audit Comment is null or empty for task ID: " + dispose.getTaskid());
+                }
+                if (basis == null || basis.trim().isEmpty()) {
+                    hasPendingDispose = true;
+                    System.out.println("Basis is null or empty for task ID: " + dispose.getTaskid());
+                }
+            }
+        }
+    }
 %>
 
-<c:if test="${not empty result}">
-    <c:set var="filteredResult" value="${result}" />
-    <c:remove var="filteredResult" />
-    <c:forEach var="dispose" items="${result}">
-        <c:if test="${dispose.status == '1'}">
-            <c:set var="filteredResult" value="${filteredResult} ${dispose}" />
-        </c:if>
-    </c:forEach>
-</c:if>
+<%
+    if (hasPendingAudit && hasPendingDispose) {
+%>
+    <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+        您有任务需要处理：请先填写审核建议和处置建议。
+    </div>
+<%
+    } else if (hasPendingAudit) {
+%>
+    <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+        您有任务需要填写审核建议。
+    </div>
+<%
+    } else if (hasPendingDispose) {
+%>
+    <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+        您有任务需要填写处置建议。
+    </div>
+<%
+    }
+%>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -156,15 +199,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             <td width="4%">漏洞类型</td>
                                             <td width="8%">发布时间</td>
                                             <td width="4%">审核状态</td>
-                                            <td width="10%">审核意见</td>
+                                            <td width="10%">审核建议</td>
                                             <td width="10%">漏洞内容</td>
                                             <td width="4%">处置人</td>
                                             <td width="4%">漏洞等级</td>
+                                            <td width="8%">处置时间</td> <!-- 添加处置时间列标题 -->
                                             <td width="8%">操作</td>
                                             <td width="10%">处置建议</td>
                                         </tr>
                                         <%
+                                            AuditorSelect auditorSelect = new AuditorSelect();
                                             for (Dispose dispose : result) {
+                                                int auditorID = Integer.parseInt(dispose.getAuditorID());
+                                                String auditorName = auditorSelect.getAuditorNameById(auditorID);
                                         %>
                                         <tr bgcolor="#FFFFFF">
                                             <td height="20"><input type="checkbox" name="delid"/></td>
@@ -174,10 +221,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                             <td><%= dispose.getStatus() %></td>
                                             <td><%= dispose.getAuditComment() %></td>
                                             <td><%= dispose.getVulnerabilityContent() %></td>
-                                            <td><%= dispose.getAuditorID() %></td>
+                                            <td><%= auditorName %></td> <!-- 显示处置人名字 -->
                                             <td><%= dispose.getLevel() %></td>
+                                            <td><%= dispose.getDisposeTime() %></td> <!-- 添加处置时间单元格 -->
+<%--                                            <td><%= dispose.getDisposeTime() %></td>--%>
                                             <td>
-<%--                                                <a href="javascript:deleteRecord('<%= dispose.getTaskid() %>')">删除</a>--%>
                                                 <a href="javascript:updateDispose('<%= dispose.getTaskid() %>')">处置漏洞</a>
                                             </td>
                                             <td><%= dispose.getBasis() %></td>

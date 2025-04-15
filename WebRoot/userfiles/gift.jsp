@@ -103,7 +103,7 @@
                 <div id="carousel${gift.giftID}" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../images/goods.jpg" class="d-block w-100 card-img-top"
+                            <img src="../images/goods1.png" class="d-block w-100 card-img-top"
                                  alt="${gift.giftName}图片"
                                  style="height: 200px; object-fit: cover;">
                         </div>

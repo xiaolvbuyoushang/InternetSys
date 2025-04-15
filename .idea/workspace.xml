@@ -12,6 +12,34 @@
   <component name="ChangeListManager">
     <list default="true" id="b1aa4c5c-61e9-487a-90d0-67023dd56b38" name="变更" comment="提交漏洞积分增加功能实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/AdminPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/AdminPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/AuditorPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/AuditorPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/TaskOnePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/TaskOnePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/BeanProcess/UserPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/TaskProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/classes/controller/TaskProcessServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/adminfiles/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/adminfiles/left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/listdispose.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/listdispose.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/auditorfiles/updateDispose.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/auditorfiles/updateDispose.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/h5/views/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/h5/views/common/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/gift.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/gift.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/userfiles/listrenwu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/userfiles/listrenwu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/AdminPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/AdminPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/AuditorPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/AuditorPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/TaskOnePro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/TaskOnePro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BeanProcess/UserPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TaskProcessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/TaskProcessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/InternetSys-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/AdminPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/AdminPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/AuditorPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/AuditorPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/TaskOnePro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/TaskOnePro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BeanProcess/UserPro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/TaskProcessServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/TaskProcessServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +118,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebRoot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -101,7 +129,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.25849733" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="Code Search" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -109,11 +137,11 @@
       <recent name="views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\biue\web_code\InternetSys" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot\h5\views" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot\html" />
       <recent name="D:\biue\web_code\InternetSys\WebRoot\userfiles" />
-      <recent name="D:\biue\web_code\InternetSys\WebRoot\h5\views\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\biue\web_code\InternetSys\WebRoot" />
@@ -296,7 +324,12 @@
       <workItem from="1743171191754" duration="7700000" />
       <workItem from="1743213805546" duration="9285000" />
       <workItem from="1743318265149" duration="23429000" />
-      <workItem from="1743383504749" duration="608000" />
+      <workItem from="1743383504749" duration="3358000" />
+      <workItem from="1743406951274" duration="5272000" />
+      <workItem from="1743470293054" duration="1073000" />
+      <workItem from="1743491810755" duration="604000" />
+      <workItem from="1743989162641" duration="8133000" />
+      <workItem from="1744682463865" duration="14910000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1742009123765</created>
@@ -396,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1743346254560</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="提交漏洞积分增加功能实现">
+      <created>1743385236369</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1743385236369</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

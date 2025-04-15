@@ -41,7 +41,7 @@
         /* 功能模块网格 */
         .tsec-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* 修改这里，每行显示两个卡片 */
             gap: 30px;
         }
 
@@ -54,6 +54,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            width: 85%; /* 增加卡片宽度 */
+            margin: 0 auto; /* 居中对齐 */
         }
 
         .tsec-card:hover {
@@ -124,8 +126,14 @@
 
             .tsec-card {
                 padding: 20px;
+                width: 90%; /* 响应式调整卡片宽度 */
+            }
+
+            .tsec-grid {
+                grid-template-columns: repeat(1, 1fr); /* 小屏幕时每行显示一个卡片 */
             }
         }
+    </style>
     </style>
 </head>
 <body>
@@ -136,7 +144,7 @@
             <div class="tsec-status"></div>
             <h3><i class="fas fa-shield-alt"></i>漏洞管理</h3>
             <a href="<%=basePath%>userfiles/assignTask.jsp" class="tsec-link">
-                <i class="fas fa-bug"></i>漏洞报告
+                <i class="fas fa-bug"></i>漏洞上报
             </a>
 <%--            <a href="../TaskProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('24');">所有漏洞查看</a>--%>
 <%--            <a href="VulnerabilityServlet?action=list" class="tsec-link">--%>
@@ -169,16 +177,16 @@
             </a>
         </div>
 
-        <!-- 威胁情报 -->
-        <div class="tsec-card">
-            <h3><i class="fas fa-broadcast-tower"></i>威胁情报</h3>
-            <a href="<%=basePath%>h5/views/intelligence.jsp" class="tsec-link">
-                <i class="fas fa-exclamation-triangle"></i>态势感知
-            </a>
-            <a href="<%=basePath%>/devices" class="tsec-link">
-                <i class="fas fa-clock"></i>最新动态
-            </a>
-        </div>
+<%--        <!-- 威胁情报 -->--%>
+<%--        <div class="tsec-card">--%>
+<%--            <h3><i class="fas fa-broadcast-tower"></i>威胁情报</h3>--%>
+<%--            <a href="<%=basePath%>h5/views/intelligence.jsp" class="tsec-link">--%>
+<%--                <i class="fas fa-exclamation-triangle"></i>态势感知--%>
+<%--            </a>--%>
+<%--            <a href="<%=basePath%>/devices" class="tsec-link">--%>
+<%--                <i class="fas fa-clock"></i>最新动态--%>
+<%--            </a>--%>
+<%--        </div>--%>
 
         <!-- 技术博客 -->
         <div class="tsec-card">
@@ -191,16 +199,16 @@
             </a>
         </div>
 
-        <!-- 应急响应 -->
-        <div class="tsec-card">
-            <h3><i class="fas fa-ambulance"></i>应急响应</h3>
-            <a href="<%=basePath%>h5/views/emergency.jsp" class="tsec-link">
-                <i class="fas fa-phone-alt"></i>24小时热线
-            </a>
-            <a href="ReportServlet" class="tsec-link">
-                <i class="fas fa-edit"></i>事件上报
-            </a>
-        </div>
+<%--        <!-- 应急响应 -->--%>
+<%--        <div class="tsec-card">--%>
+<%--            <h3><i class="fas fa-ambulance"></i>应急响应</h3>--%>
+<%--            <a href="<%=basePath%>h5/views/emergency.jsp" class="tsec-link">--%>
+<%--                <i class="fas fa-phone-alt"></i>24小时热线--%>
+<%--            </a>--%>
+<%--            <a href="ReportServlet" class="tsec-link">--%>
+<%--                <i class="fas fa-edit"></i>事件上报--%>
+<%--            </a>--%>
+<%--        </div>--%>
     </div>
 </div>
 </body>

@@ -1,7 +1,9 @@
 package BeanProcess;
 
 import DatabaseConnect.ConnectDB;
+import model.Auditor;
 import model.TaskOne;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -170,6 +172,55 @@ public class TaskOnePro {
         return al;
     }
 
+    public static boolean assignReviewer(int taskId, int auditorId) {
+        boolean b = false;
+        String sql = "UPDATE taskone SET auditorID = ? WHERE taskid = ?";
+
+        Connection ct = null;
+        PreparedStatement sta = null;
+
+        try {
+            ConnectDB cdb = new ConnectDB();
+            ct = cdb.getConn();
+            sta = ct.prepareStatement(sql);
+            sta.setInt(1, auditorId);
+            sta.setInt(2, taskId);
+            int a = sta.executeUpdate();
+            if (a == 1) {
+                b = true;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            closeResources(null, sta, ct);
+        }
+        return b;
+    }
+
+    public static void closeResources(ResultSet rs, PreparedStatement sta, Connection ct) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (sta != null) {
+            try {
+                sta.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (ct != null) {
+            try {
+                ct.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public ArrayList<TaskOne> getTasksByPage(int pageNow) {
         ArrayList<TaskOne> al = new ArrayList<TaskOne>();
         // 使用预编译语句防止 SQL 注入
@@ -271,6 +322,61 @@ public class TaskOnePro {
             this.closeM();
         }
         return b;
+    }
+
+    public static boolean isAuditorExists(int auditorId) {
+        boolean exists = false;
+        String sql = "SELECT COUNT(*) FROM auditor WHERE auditorID = ?";
+
+        Connection ct = null;
+        PreparedStatement sta = null;
+        ResultSet rs = null;
+
+        try {
+            ConnectDB cdb = new ConnectDB();
+            ct = cdb.getConn();
+            sta = ct.prepareStatement(sql);
+            sta.setInt(1, auditorId);
+            rs = sta.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                if (count > 0) {
+                    exists = true;
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            closeResources(rs, sta, ct);
+        }
+        return exists;
+    }
+
+    public ArrayList<Auditor> getAuditors() {
+        ArrayList<Auditor> auditors = new ArrayList<Auditor>();
+        String sql = "SELECT auditorID, auditorName FROM auditor";
+
+        Connection ct = null;
+        ResultSet rs = null;
+        PreparedStatement sta = null;
+
+        try {
+            ct = new ConnectDB().getConn();
+            sta = ct.prepareStatement(sql);
+            rs = sta.executeQuery();
+
+            while (rs.next()) {
+                Auditor auditor = new Auditor();
+                auditor.setAuditorID(rs.getInt("auditorID"));
+                auditor.setAuditorName(rs.getString("auditorName"));
+                auditors.add(auditor);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeResources(rs, sta, ct);
+        }
+        return auditors;
     }
 
     public void closeM() {

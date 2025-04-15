@@ -38,7 +38,7 @@
             <select id="userType" name="userType">
                 <option value="1">管理员</option>
                 <option value="2">白帽子</option>
-                <option value="3">审核人</option>
+                <option value="3">应急组</option>
             </select>
         </center>
         <br>

@@ -123,6 +123,32 @@
             <!--  漏洞系统结束    -->
 
 
+            <!-- 处置管理开始 -->
+            <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
+                <tr>
+                    <td height="29">
+                        <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="8%"><img name="img10" id="img10" src="../images/ico04.gif" width="8" height="11"/></td>
+                                <td width="92%">
+                                    <a href="javascript:" target="mainFrame" class="left-font03" onClick="list('10');">处置管理</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </TABLE>
+            <table id="subtree10" style="DISPLAY: none" width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="left-table02">
+                <tr>
+                    <td width="9%" height="20"><img id="xiaotu26" src="../images/ico06.gif" width="8" height="12"/></td>
+                    <td width="91%">
+                        <a href="../DisposalProcessServlet?pageNow=1&flag=fenye" target="mainFrame" class="left-font03" onClick="tupian('26');">处置信息查看</a>
+                    </td>
+                </tr>
+            </table>
+            <!-- 处置管理结束 -->
+
+
             <TABLE width="100%" border="0" cellpadding="0" cellspacing="0" class="left-table03">
                 <tr>
                     <td height="29">

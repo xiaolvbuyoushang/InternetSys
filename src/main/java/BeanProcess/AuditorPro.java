@@ -85,6 +85,68 @@ public class AuditorPro {
         return auditors; // 返回查询结果列表
     }
 
+    // 根据 auditorName 查找 auditorID 的方法
+    public int getAuditorIDByName(String auditorName) {
+        int auditorID = 0;
+        String sql = "SELECT auditorID FROM auditor WHERE auditorName = ?";
+        try {
+            ConnectDB cdb = new ConnectDB();
+            ct = cdb.getConn();
+            sta = ct.prepareStatement(sql);
+            sta.setString(1, auditorName);
+            rs = sta.executeQuery();
+            if (rs.next()) {
+                auditorID = rs.getInt("auditorID");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            this.closeM();
+        }
+        return auditorID;
+    }
+
+    // 根据 auditorID 查找 auditorName 的方法
+    public String getAuditorNameByID(int auditorID) {
+        String auditorName = "";
+        String sql = "SELECT auditorName FROM auditor WHERE auditorID = ?";
+        try {
+            ConnectDB cdb = new ConnectDB();
+            ct = cdb.getConn();
+            sta = ct.prepareStatement(sql);
+            sta.setInt(1, auditorID);
+            rs = sta.executeQuery();
+            if (rs.next()) {
+                auditorName = rs.getString("auditorName");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            this.closeM();
+        }
+        return auditorName;
+    }
+
+    public int getAuditorID(String userCode) {
+        int auditorID = -1;
+        String sql = "SELECT auditorID FROM auditor WHERE auditorName = ?";
+
+        try {
+            ConnectDB cdb = new ConnectDB();
+            ct = cdb.getConn();
+            sta = ct.prepareStatement(sql);
+            sta.setString(1, userCode);
+            rs = sta.executeQuery();
+            if (rs.next()) {
+                auditorID = rs.getInt("auditorID");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            this.closeM();
+        }
+        return auditorID;
+    }
     /**
      * 关闭数据库资源方法
      * 该方法用于关闭ResultSet、Connection和PreparedStatement对象，

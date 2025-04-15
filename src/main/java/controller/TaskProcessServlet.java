@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -46,6 +48,15 @@ public class TaskProcessServlet extends HttpServlet {
                 TaskOnePro ubc = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = ubc.getTasksByPage(pageNow); // 获取当前页的任务列表
                 System.out.println("TaskOne: " + aList.size()); // 打印任务数量
+
+                // 对任务列表按照发布时间倒序排序
+                Collections.sort(aList, new Comparator<TaskOne>() {
+                    @Override
+                    public int compare(TaskOne t1, TaskOne t2) {
+                        return t2.getAssignDate().compareTo(t1.getAssignDate());
+                    }
+                });
+
                 int pageCount = ubc.getPageCount(); // 获取总页数
                 // 将查询结果和分页信息存储到请求对象中
                 request.setAttribute("result", aList);
@@ -84,7 +95,6 @@ public class TaskProcessServlet extends HttpServlet {
                 request.setAttribute("message", "漏洞上报失败！");
                 request.setAttribute("redirectUrl", "index.jsp");
             }
-//            request.getRequestDispatcher("user/select.jsp").forward(request, response);
             // 转发请求到结果页面
             request.getRequestDispatcher("result.jsp").forward(request, response);
         } else if (flag.equals("findrenwu")) { // 如果"flag"等于"findrenwu"，表示需要按状态查找任务
@@ -99,6 +109,15 @@ public class TaskProcessServlet extends HttpServlet {
                 TaskOnePro taskOnePro = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = taskOnePro.getTaskByStatus(pageNow, taskStatus); // 获取指定状态的任务列表
                 System.out.println("findrenwu test: " + aList); // 打印任务列表
+
+                // 对任务列表按照发布时间倒序排序
+                Collections.sort(aList, new Comparator<TaskOne>() {
+                    @Override
+                    public int compare(TaskOne t1, TaskOne t2) {
+                        return t2.getAssignDate().compareTo(t1.getAssignDate());
+                    }
+                });
+
                 int pageCount = taskOnePro.getPageCount(); // 获取总页数
                 // 将查询结果和分页信息存储到请求对象中
                 request.setAttribute("result", aList);
@@ -124,6 +143,15 @@ public class TaskProcessServlet extends HttpServlet {
                 System.out.println("findTask pageNow test: " + pageNow); // 打印当前页码
                 TaskOnePro taskonePro = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = taskonePro.getTaskPageByTime(pageNow, assigndate1, assigndate2); // 获取指定时间范围的任务列表
+
+                // 对任务列表按照发布时间倒序排序
+                Collections.sort(aList, new Comparator<TaskOne>() {
+                    @Override
+                    public int compare(TaskOne t1, TaskOne t2) {
+                        return t2.getAssignDate().compareTo(t1.getAssignDate());
+                    }
+                });
+
                 int pageCount = taskonePro.getPageCount(); // 获取总页数
                 // 将查询结果和分页信息存储到请求对象中
                 request.setAttribute("result", aList);
@@ -149,6 +177,15 @@ public class TaskProcessServlet extends HttpServlet {
                 System.out.println("findTask pageNow test: " + pageNow); // 打印当前页码
                 TaskOnePro taskonePro = new TaskOnePro(); // 创建任务处理对象
                 ArrayList<TaskOne> aList = taskonePro.getTaskPageByTime(pageNow, assigndate1, assigndate2); // 获取指定时间范围的任务列表
+
+                // 对任务列表按照发布时间倒序排序
+                Collections.sort(aList, new Comparator<TaskOne>() {
+                    @Override
+                    public int compare(TaskOne t1, TaskOne t2) {
+                        return t2.getAssignDate().compareTo(t1.getAssignDate());
+                    }
+                });
+
                 int pageCount = taskonePro.getPageCount(); // 获取总页数
                 // 将查询结果和分页信息存储到请求对象中
                 request.setAttribute("result", aList);

@@ -149,7 +149,7 @@
                         <a href="${pageContext.request.contextPath}/logout.jsp" class="nav-link text-danger">退出</a>
                     </c:when>
                     <c:otherwise>
-                        <a href="${pageContext.request.contextPath}/login.jsp" class="nav-link">登陆</a>
+                        <a href="${pageContext.request.contextPath}/login.jsp" class="nav-link">登录</a>
                     </c:otherwise>
                 </c:choose>
             </li>

@@ -49,6 +49,51 @@ public class AdminPro {
         return b; // 返回验证结果
     }
 
+    public int getAdminID(String userCode) {
+        int adminID = -1;
+        String sql = "SELECT adminID FROM admin WHERE adminName = ?";
+
+        try {
+            ConnectDB cdb = new ConnectDB();
+            ct = cdb.getConn();
+            sta = ct.prepareStatement(sql);
+            sta.setString(1, userCode);
+            rs = sta.executeQuery();
+            if (rs.next()) {
+                adminID = rs.getInt("adminID");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            closeResources(rs, sta, ct);
+        }
+        return adminID;
+    }
+
+    public static void closeResources(ResultSet rs, PreparedStatement sta, Connection ct) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (sta != null) {
+            try {
+                sta.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        if (ct != null) {
+            try {
+                ct.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     /**
      * 关闭数据库资源方法
      * 该方法用于关闭ResultSet、Connection和PreparedStatement对象，

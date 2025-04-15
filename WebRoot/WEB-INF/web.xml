@@ -149,6 +149,32 @@
         </jsp-property-group>
     </jsp-config>
 
+
+    <servlet>
+        <servlet-name>DisposalProcessServlet</servlet-name>
+        <servlet-class>controller.DisposalProcessServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DisposalProcessServlet</servlet-name>
+        <url-pattern>/DisposalProcessServlet</url-pattern>
+    </servlet-mapping>
+
+
+<!--    <servlet>-->
+<!--        <servlet-name>ReviewProcessServlet</servlet-name>-->
+<!--        <servlet-class>controller.ReviewProcessServlet</servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ReviewProcessServlet</servlet-name>-->
+<!--        <url-pattern>/ReviewProcessServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+
+
+
+
 <!--    <servlet>-->
 <!--        <servlet-name>UploadFileServlet</servlet-name>-->
 <!--        <servlet-class>controller.UploadFileServlet</servlet-class>-->

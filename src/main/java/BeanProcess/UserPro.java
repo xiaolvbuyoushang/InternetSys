@@ -404,6 +404,27 @@ public ArrayList<User> getUsersByPage(int pageNow) {
 		// 返回获取到的公司ID
 		return companyid;
 	}
+	public int getUserID(String userCode) {
+		int userID = -1;
+		String sql = "SELECT userID FROM user WHERE userName = ?";
+
+		try {
+			ConnectDB cdb = new ConnectDB();
+			ct = cdb.getConn();
+			sta = ct.prepareStatement(sql);
+			sta.setString(1, userCode);
+			rs = sta.executeQuery();
+			if (rs.next()) {
+				userID = rs.getInt("userID");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			// 无论是否发生异常，都关闭相关数据库资源
+			this.closeM();
+		}
+		return userID;
+	}
 
 	// 获取所有用户列表的方法
 	public ArrayList<User> getAllUsers() {

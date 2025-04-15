@@ -43,7 +43,9 @@ public class LoginServlet extends HttpServlet {
             AdminPro adminPro = new AdminPro(); // 创建管理员处理对象
             boolean b = adminPro.checkAdminInput(userCode, password); // 调用管理员登录验证方法
             if (b) { // 如果验证成功
+                int adminID = adminPro.getAdminID(userCode); // 获取管理员ID
                 request.getSession().setAttribute("myName", userCode); // 将用户名存储到会话中
+                request.getSession().setAttribute("adminID", adminID); // 将管理员ID存储到会话中
 
                 request.getRequestDispatcher("admin/select.jsp").forward(request, response); // 转发请求到管理员页面
                 System.out.println(role + ": " + error); // 打印角色和错误信息
@@ -58,7 +60,10 @@ public class LoginServlet extends HttpServlet {
             UserPro userPro = new UserPro(); // 创建用户处理对象
             boolean b = userPro.checkUserInput(userCode, password); // 调用用户登录验证方法
             if (b) { // 如果验证成功
+                int userID = userPro.getUserID(userCode); // 获取用户ID
                 request.getSession().setAttribute("myName", userCode); // 将用户名存储到会话中
+                request.getSession().setAttribute("userID", userID); // 将用户ID存储到会话中
+
                 request.getRequestDispatcher("index.jsp").forward(request, response); // 转发请求到用户页面
                 System.out.println(role + ": " + error); // 打印角色和错误信息
             } else { // 如果验证失败
@@ -72,7 +77,10 @@ public class LoginServlet extends HttpServlet {
             AuditorPro auditUserPro = new AuditorPro(); // 创建审核用户处理对象
             boolean b = auditUserPro.checkAuditorInput(userCode, password); // 调用审核用户登录验证方法
             if (b) { // 如果验证成功
+                int auditorID = auditUserPro.getAuditorID(userCode); // 获取审核用户ID
                 request.getSession().setAttribute("myName", userCode); // 将用户名存储到会话中
+                request.getSession().setAttribute("auditorID", auditorID); // 将审核用户ID存储到会话中
+
                 request.getRequestDispatcher("auditor/select.jsp").forward(request, response); // 转发请求到审核用户页面
                 System.out.println(role + ": " + error); // 打印角色和错误信息
             } else { // 如果验证失败

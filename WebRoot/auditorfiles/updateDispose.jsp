@@ -17,11 +17,12 @@
     }
 
     // 从 session 中获取当前用户的 ID
-    String auditorID = (String) session.getAttribute("myName");
+    Integer auditorID = (Integer) session.getAttribute("auditorID");
     if (auditorID == null) {
-        auditorID = ""; // 如果 session 中没有用户 ID，则设置为空字符串
+        auditorID = -1; // 如果 session 中没有用户 ID，则设置为 -1
     }
 
+    // 打印会话中的所有属性
     Enumeration<String> attributeNames = session.getAttributeNames();
     while (attributeNames.hasMoreElements()) {
         String attributeName = attributeNames.nextElement();
